@@ -9,9 +9,9 @@
   <title>備忘録 - ishihara.jp blog</title>
   <meta property="og:title" content="備忘録" />
   <meta name="twitter:title" content="備忘録" />
-  <meta name="description" content="環境立ち上げコマンド 記事作成 画像挿入 画像フォルダを作成 &lsquo;static&rsquo;フォルダ配下に&rsquo;images&rs">
-  <meta property="og:description" content="環境立ち上げコマンド 記事作成 画像挿入 画像フォルダを作成 &lsquo;static&rsquo;フォルダ配下に&rsquo;images&rs">
-  <meta name="twitter:description" content="環境立ち上げコマンド 記事作成 画像挿入 画像フォルダを作成 &lsquo;static&rsquo;フォルダ配下に&rsquo;images&rs">
+  <meta name="description" content="環境立ち上げコマンド 記事作成 画像挿入 画像フォルダを作成 staticフォルダ配下にimagesフォルダを作成 static/images このimagesフォルダに適当な">
+  <meta property="og:description" content="環境立ち上げコマンド 記事作成 画像挿入 画像フォルダを作成 staticフォルダ配下にimagesフォルダを作成 static/images このimagesフォルダに適当な">
+  <meta name="twitter:description" content="環境立ち上げコマンド 記事作成 画像挿入 画像フォルダを作成 staticフォルダ配下にimagesフォルダを作成 static/images このimagesフォルダに適当な">
   <meta name="author" content="ishihara.jp"/>
   <meta name="twitter:card" content="summary" />
   <meta property="og:url" content="https://ishihara-jp.github.io/2018/09/24/20181028/" />
@@ -185,19 +185,21 @@
 <h2 id="画像挿入">画像挿入</h2>
 
 <ul>
-<li>画像フォルダを作成<br />
+<li><p>画像フォルダを作成</p>
 
 <ul>
-<li>&lsquo;static&rsquo;フォルダ配下に&rsquo;images&rsquo;フォルダを作成
-&ldquo;&rsquo;
-static/images
-&ldquo;&rsquo;</li>
-<li>この&rsquo;imagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
-&ldquo;&lsquo;md
-<img src="/image/2018-10-28 22.19.36.png" alt="image" />
-&ldquo;&rsquo;</li>
-<li>こんな感じ
-<img src="/image/2018-10-28 22.19.36.png" alt="image" /></li>
+<li><p><code>static</code>フォルダ配下に<code>images</code>フォルダを作成</p>
+
+<pre><code>static/images
+</code></pre></li>
+
+<li><p>この<code>images</code>フォルダに適当な画像（例：<code>2018-10-28 22.19.36.png</code>）をコピーして、markdown形式で記述</p>
+
+<pre><code class="language-md">![image](/images/2018-10-28 22.19.36.png)
+</code></pre></li>
+
+<li><p>こんな感じ
+<img src="/images/2018-10-28 22.19.36.png" alt="image" /></p></li>
 </ul></li>
 </ul>
 
