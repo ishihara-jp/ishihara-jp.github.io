@@ -7,35 +7,39 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="ishihara.jp">
-<meta name="keywords" content="">
-<meta name="description" content="○論文
-* 原著（概要と結果）
+<meta name="keywords" content="DeepLearning, Healthcare">
+<meta name="description" content="Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。
+○論文
+ 原著（概要と結果）
 Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
  補足資料（具体的な手法説明）
-Supplementary Materials  ○ソースコード
-* FHIRデータ形式のソース
-https://github.com/google/fhir
-○関連記事
-* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+Supplementary Materials
+  ○ソースコード
+ FHIRデータ形式のソース
+https://github.com/google/fhir  ○関連記事
+ Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
 https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
  医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
-https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+https://medit.tech/google-and-the-teams-repo/
+  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
 ※全体概念図は下記
 感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
 
 
-<meta property="og:description" content="○論文
-* 原著（概要と結果）
+<meta property="og:description" content="Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。
+○論文
+ 原著（概要と結果）
 Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
  補足資料（具体的な手法説明）
-Supplementary Materials  ○ソースコード
-* FHIRデータ形式のソース
-https://github.com/google/fhir
-○関連記事
-* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+Supplementary Materials
+  ○ソースコード
+ FHIRデータ形式のソース
+https://github.com/google/fhir  ○関連記事
+ Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
 https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
  医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
-https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+https://medit.tech/google-and-the-teams-repo/
+  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
 ※全体概念図は下記
 感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
 <meta property="og:type" content="article">
@@ -44,32 +48,36 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
 <meta property="og:url" content="https://ishihara-jp.github.io/post/20181101/">
 <meta property="twitter:url" content="https://ishihara-jp.github.io/post/20181101/">
 <meta property="og:site_name" content="ishihara-jp blog">
-<meta property="og:description" content="○論文
-* 原著（概要と結果）
+<meta property="og:description" content="Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。
+○論文
+ 原著（概要と結果）
 Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
  補足資料（具体的な手法説明）
-Supplementary Materials  ○ソースコード
-* FHIRデータ形式のソース
-https://github.com/google/fhir
-○関連記事
-* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+Supplementary Materials
+  ○ソースコード
+ FHIRデータ形式のソース
+https://github.com/google/fhir  ○関連記事
+ Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
 https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
  医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
-https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+https://medit.tech/google-and-the-teams-repo/
+  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
 ※全体概念図は下記
 感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
-<meta name="twitter:description" content="○論文
-* 原著（概要と結果）
+<meta name="twitter:description" content="Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。
+○論文
+ 原著（概要と結果）
 Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
  補足資料（具体的な手法説明）
-Supplementary Materials  ○ソースコード
-* FHIRデータ形式のソース
-https://github.com/google/fhir
-○関連記事
-* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+Supplementary Materials
+  ○ソースコード
+ FHIRデータ形式のソース
+https://github.com/google/fhir  ○関連記事
+ Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
 https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
  医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
-https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+https://medit.tech/google-and-the-teams-repo/
+  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
 ※全体概念図は下記
 感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
 <meta property="og:locale" content="en">
@@ -128,7 +136,7 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="/">ishihara-jp blog</a>
@@ -146,7 +154,7 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -193,21 +201,21 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/#about">
-    
-      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-      
-      <span class="sidebar-button-desc">About</span>
-    </a>
-  </li>
-
-  <li class="sidebar-button">
-    
       <a class="sidebar-button-link open-algolia-search" href="/#search">
     
       <i class="sidebar-button-icon fa fa-lg fa-search"></i>
       
       <span class="sidebar-button-desc">Search</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
     </a>
   </li>
 
@@ -256,14 +264,14 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
 
       
 
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
         <article class="post" itemscope itemType="http://schema.org/BlogPosting">
           
           
-            <div class="post-header main-content-wrap text-left">
+            <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
       Scalable and accurate deep learning with electronic health records 解読
@@ -287,26 +295,35 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
             <div class="main-content-wrap">
               
 
-<p>○論文<br />
-* 原著（概要と結果）<br />
-<a href="https://www.nature.com/articles/s41746-018-0029-1">Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).</a></p>
+<p>Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。
+まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。
+間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。</p>
+
+<p>○論文</p>
 
 <ul>
-<li>補足資料（具体的な手法説明）<br />
-<a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41746-018-0029-1/MediaObjects/41746_2018_29_MOESM1_ESM.pdf">Supplementary Materials</a></li>
+<li><p>原著（概要と結果）<br />
+<a href="https://www.nature.com/articles/s41746-018-0029-1">Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).</a></p></li>
+
+<li><p>補足資料（具体的な手法説明）<br />
+<a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41746-018-0029-1/MediaObjects/41746_2018_29_MOESM1_ESM.pdf">Supplementary Materials</a></p></li>
 </ul>
 
-<p>○ソースコード<br />
-* FHIRデータ形式のソース<br />
-<a href="https://github.com/google/fhir">https://github.com/google/fhir</a></p>
-
-<p>○関連記事<br />
-* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発<br />
-<a href="https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/">https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/</a></p>
+<p>○ソースコード</p>
 
 <ul>
-<li>医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究<br />
-<a href="https://medit.tech/google-and-the-teams-repo/">https://medit.tech/google-and-the-teams-repo/</a></li>
+<li>FHIRデータ形式のソース<br />
+<a href="https://github.com/google/fhir">https://github.com/google/fhir</a></li>
+</ul>
+
+<p>○関連記事</p>
+
+<ul>
+<li><p>Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発<br />
+<a href="https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/">https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/</a></p></li>
+
+<li><p>医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究<br />
+<a href="https://medit.tech/google-and-the-teams-repo/">https://medit.tech/google-and-the-teams-repo/</a></p></li>
 </ul>
 
 <h1 id="簡単に言うと">簡単に言うと</h1>
@@ -656,7 +673,7 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
 </footer>
 
       </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
         <div class="post-actions-wrap">
   
       <nav >
@@ -703,7 +720,7 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
 </div>
 
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <i id="btn-close-shareoptions" class="fa fa-close"></i>
   <ul class="share-options">
     
@@ -771,18 +788,20 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
                   Oct 10, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">○論文
-* 原著（概要と結果）
+              <div class="media-content hide-xs font-merryweather">Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。
+○論文
+ 原著（概要と結果）
 Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
  補足資料（具体的な手法説明）
-Supplementary Materials  ○ソースコード
-* FHIRデータ形式のソース
-https://github.com/google/fhir
-○関連記事
-* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+Supplementary Materials
+  ○ソースコード
+ FHIRデータ形式のソース
+https://github.com/google/fhir  ○関連記事
+ Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
 https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
  医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
-https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校+シカゴ薬科大+スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+https://medit.tech/google-and-the-teams-repo/
+  簡単に言うと Google＋UCサンフランシスコ校+シカゴ薬科大+スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
 ※全体概念図は下記
 感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.</div>
             </div>
