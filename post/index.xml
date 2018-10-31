@@ -61,7 +61,8 @@ https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサ
       <pubDate>Mon, 24 Sep 2018 03:06:08 +0900</pubDate>
       
       <guid>https://ishihara-jp.github.io/post/20181028/</guid>
-      <description> 環境立ち上げコマンド 記事作成 画像挿入  画像フォルダを作成
+      <description> 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
+記事作成 画像挿入  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
 static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
 ![image](/images/2018-10-28 22.19.36.png)  こんな感じ    </description>
