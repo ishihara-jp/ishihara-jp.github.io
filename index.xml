@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ishihara.jp@gmail.com (ishihara.jp)</managingEditor>
     <webMaster>ishihara.jp@gmail.com (ishihara.jp)</webMaster>
-    <lastBuildDate>Sun, 28 Oct 2018 21:47:17 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Oct 2018 00:00:08 +0900</lastBuildDate>
     
 	<atom:link href="https://ishihara-jp.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scalable and accurate deep learning with electronic health records 解説</title>
+      <link>https://ishihara-jp.github.io/2018/10/31/20181031/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:08 +0900</pubDate>
+      <author>ishihara.jp@gmail.com (ishihara.jp)</author>
+      <guid>https://ishihara-jp.github.io/2018/10/31/20181031/</guid>
+      <description>○論文 * 原著（概要と結果） Alvin Rajkomar(Google), et.al. &amp;ldquo;Scalable and accurate deep learning with electronic health records&amp;rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018). 補足資料（具体的な手法説明） Supplementary Materials ○ソースコード * FHIRデータ形式のソース</description>
+    </item>
     
     <item>
       <title>Fourth</title>
