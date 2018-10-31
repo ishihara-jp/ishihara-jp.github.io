@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="ishihara.jp">
+<meta name="keywords" content="">
+<meta name="description" content="○論文
+* 原著（概要と結果）
+Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
+ 補足資料（具体的な手法説明）
+Supplementary Materials  ○ソースコード
+* FHIRデータ形式のソース
+https://github.com/google/fhir
+○関連記事
+* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
+ 医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
+https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+※全体概念図は下記
+感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
+
+
+<meta property="og:description" content="○論文
+* 原著（概要と結果）
+Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
+ 補足資料（具体的な手法説明）
+Supplementary Materials  ○ソースコード
+* FHIRデータ形式のソース
+https://github.com/google/fhir
+○関連記事
+* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
+ 医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
+https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+※全体概念図は下記
+感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scalable and accurate deep learning with electronic health records 解読">
+<meta name="twitter:title" content="Scalable and accurate deep learning with electronic health records 解読">
+<meta property="og:url" content="https://ishihara-jp.github.io/post/20181101/">
+<meta property="twitter:url" content="https://ishihara-jp.github.io/post/20181101/">
+<meta property="og:site_name" content="ishihara-jp blog">
+<meta property="og:description" content="○論文
+* 原著（概要と結果）
+Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
+ 補足資料（具体的な手法説明）
+Supplementary Materials  ○ソースコード
+* FHIRデータ形式のソース
+https://github.com/google/fhir
+○関連記事
+* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
+ 医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
+https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+※全体概念図は下記
+感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
+<meta name="twitter:description" content="○論文
+* 原著（概要と結果）
+Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
+ 補足資料（具体的な手法説明）
+Supplementary Materials  ○ソースコード
+* FHIRデータ形式のソース
+https://github.com/google/fhir
+○関連記事
+* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
+ 医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
+https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校&#43;シカゴ薬科大&#43;スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+※全体概念図は下記
+感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.">
+<meta property="og:locale" content="en">
+
+  
+    <meta property="article:published_time" content="2018-10-31T23:10:37">
+  
+  
+    <meta property="article:modified_time" content="2018-10-31T23:10:37">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/19012a76fcfa38fd855ce0ddc517350a?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/19012a76fcfa38fd855ce0ddc517350a?s=640">
+
+
+    <title>Scalable and accurate deep learning with electronic health records 解読</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://ishihara-jp.github.io/post/20181101/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">ishihara-jp blog</a>
+  </div>
+  
+    
+      <a class="header-right-icon open-algolia-search"
+         href="/#search">
+    
+    
+      <i class="fa fa-lg fa-search"></i>
+    
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/19012a76fcfa38fd855ce0ddc517350a?s=110" alt="" />
+        </a>
+        <h4 class="sidebar-profile-name">ishihara.jp</h4>
+        
+          <h5 class="sidebar-profile-bio">Super bio with markdown support <strong>COOL</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/visualdata">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">VisualData</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link open-algolia-search" href="/#search">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+      
+      <span class="sidebar-button-desc">Search</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ishihara-jp" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Scalable and accurate deep learning with electronic health records 解読
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-10-31T23:10:37&#43;09:00">
+        
+   31, 2018
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<p>○論文<br />
+* 原著（概要と結果）<br />
+<a href="https://www.nature.com/articles/s41746-018-0029-1">Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).</a></p>
+
+<ul>
+<li>補足資料（具体的な手法説明）<br />
+<a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41746-018-0029-1/MediaObjects/41746_2018_29_MOESM1_ESM.pdf">Supplementary Materials</a></li>
+</ul>
+
+<p>○ソースコード<br />
+* FHIRデータ形式のソース<br />
+<a href="https://github.com/google/fhir">https://github.com/google/fhir</a></p>
+
+<p>○関連記事<br />
+* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発<br />
+<a href="https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/">https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/</a></p>
+
+<ul>
+<li>医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究<br />
+<a href="https://medit.tech/google-and-the-teams-repo/">https://medit.tech/google-and-the-teams-repo/</a></li>
+</ul>
+
+<h1 id="簡単に言うと">簡単に言うと</h1>
+
+<p><strong>Google＋UCサンフランシスコ校+シカゴ薬科大+スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。</strong></p>
+
+<p>※全体概念図は下記</p>
+
+<p><img src="/images/096bf972-dc53-11e8-9ace-bc05ab1d4bb4.png" alt="image" /></p>
+
+<h1 id="感想">感想</h1>
+
+<ul>
+<li>転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、<strong>生データからベクトル化(Embedding)する前処理で吸収</strong>。（帰納学習ではなく、表現学習の論文とみると合点がいった）</li>
+<li>前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。<strong>この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象</strong>。</li>
+<li>推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。</li>
+<li>ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように<strong>臨床の様々なデータを余すこと無く使うことが重要</strong>であることも示唆。</li>
+</ul>
+
+<hr />
+
+<h1 id="概要">概要</h1>
+
+<ul>
+<li>EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。</li>
+<li>タスクを選んだ理由
+
+<ul>
+<li>院内死亡：医療の重要な結果</li>
+<li>計画外再入院：医療の質を客観評価できる指標</li>
+<li>入院長期化：医療資源の活用指標</li>
+<li>退院診断名：患者の問題理解の指標</li>
+</ul></li>
+<li>結果</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>タスク</th>
+<th>提案手法</th>
+<th>従来手法</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>院内死亡</td>
+<td>0.93～0.94</td>
+<td>0.85～0.86</td>
+</tr>
+
+<tr>
+<td>計画外再入院</td>
+<td>0.75～0.76</td>
+<td>0.68～0.70</td>
+</tr>
+
+<tr>
+<td>入院長期化</td>
+<td>0.85～0.86</td>
+<td>0.74～0.76</td>
+</tr>
+
+<tr>
+<td>退院診断名</td>
+<td>0.90</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><p>評価指標のAUROCは、ROC曲線の面積を表し、1.0に近づく程、精度良い（=TPが多く&amp;FPが少ない）</p></li>
+
+<li><p>提案手法は、様々な医療における活用に応用ができる（Scalable &amp; Accurate）推定手法。</p></li>
+</ul>
+
+<h1 id="イントロ">イントロ</h1>
+
+<ul>
+<li>分析コストの約8割がデータクレンジングなど</li>
+<li>フリーテキストをそのまま使うと、FPとFNが問題となる。</li>
+<li>深層学習の利点は潜在的な推定因子を予め特定しておく必要がないこと。</li>
+<li>面倒なデータ構造化をせずとも、ダイレクトに深層学習でEHRの生データを扱えると考えた。</li>
+</ul>
+
+<h1 id="関連研究">関連研究</h1>
+
+<ul>
+<li>一部データのみ使って推定する研究事例はある</li>
+<li>複数病院間のデータ標準化はチャレンジングな課題。</li>
+<li>深層学習の登場によって、EHRデータを扱う研究事例が急増。</li>
+<li>典型的な例は、オートエンコーダによる特定の診断の予測に利用するもの。</li>
+<li>時系列データを扱うやり方としては、RNNでイベントを予測するもの。</li>
+<li>フリーテキストを含む全てのEHRデータを扱ったものはなく、どの研究も部分的な特徴しか使っていない。</li>
+
+<li><p>また、ICUにフォーカスした研究事例もある。</p></li>
+
+<li><p>この研究の貢献は下記2点。</p>
+
+<ol>
+<li>EHR生データを入力でき、FHIR形式で結果出力できるので、業務システムへの組み込みが容易</li>
+<li>ICUなどに特化しない一般患者を対象</li>
+</ol></li>
+</ul>
+
+<h1 id="結果">結果</h1>
+
+<ul>
+<li>2つの病院(A, B)の約3年間における約21万件の入院データ（約11万人の患者データ）を対象。</li>
+<li>入院や退院などのイベント前後における、各タスクの予測精度を従来手法（ベースライン）と比較した結果が下表の通り。</li>
+</ul>
+
+<p><img src="/images/85e9f958-dc4f-11e8-914b-a61ea1a057bf.png" alt="image" /></p>
+
+<ul>
+<li>院内死亡予測は、ベースライン手法として、28因子のロジスティック回帰モデル（aEWS)を利用。提案手法は、これに対し誤アラートを約半減させた。精度AUROCは下図（実線：提案、破線：従来）。</li>
+</ul>
+
+<p><img src="/images/ebb373a0-dc4e-11e8-9860-f25537566f8a.png" alt="image" /></p>
+
+<ul>
+<li><p>退院時診断の推定は、ＩＣＤ－９の病名コード(約1万4千コード)に基づき実施。退院時はAUROC 0.9。ベースラインとなる既存手法は無かったため、比較はなし。</p></li>
+
+<li><p>実際に、入院10日後に悪性の胸水と膿胸により患者死亡したケース（下図）では、入院後24時間後に提案手法では死亡リスクが19.9%と予測していたのに対し、従来手法(aEWS)は9.3%であった。</p></li>
+</ul>
+
+<p><img src="/images/756d4fa6-dc51-11e8-913f-9d1071f93058.png" alt="image" /></p>
+
+<h1 id="手法">手法</h1>
+
+<h2 id="データセットについて">データセットについて</h2>
+
+<ul>
+<li>UCSF 5年分＋UCM 8年分のデータを学習に、AおよびＢ病院のデータをテストに利用（倫理承認を受け、匿名化済み）</li>
+<li>データの種類としては、患者情報、オーダー、診断、処置、投薬、臨床検査値、バイタルサイン、フローシート。</li>
+<li>数値は正規化。フリーテキストはトークン</li>
+</ul>
+
+<h3 id="補足-fhirリソースからトークンへのマッピング手法">（補足）FHIRリソースからトークンへのマッピング手法</h3>
+
+<p>※ データ表現については<a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41746-018-0029-1/MediaObjects/41746_2018_29_MOESM1_ESM.pdf">Supplementary Materials</a>が詳しいので、別途ここで説明する。<br />
+* ちなみに、本論文では、「<strong>Embeddings</strong>（埋め込み）」というキーワードがかなり登場する。意味としては下記、論文にあるように、ベクトル化と同義なので「ベクトル化」と訳した。</p>
+
+<blockquote>
+<p>自然言語処理において Embedding（埋め込み）とは主に，文や単語，文字など自然言語の構成要素に何らかの空間における（実）ベクトルを与えることを指す。<br />
+―<a href="http://www.orsj.or.jp/archive2/or62-11/or62_11_717.pdf">堅山　耀太郎：Word Embeddingモデル再訪（オペレーションリサーチ 2017年11月号）</a>より</p>
+</blockquote>
+
+<ul>
+<li>例えば、あるオーダー情報をベクトル化する際は、オーダー名＋薬剤コード（RxNormコード）を対応づけて、これを１つの要素（特徴）とする。</li>
+<li>各特徴の値（例えば、アスピリン）は、単一のユニークなトークン（１つの要素の場合）か、連続したトークン（フリーテキストの要素の場合）に対応づける。</li>
+<li>コードの文字表現や、医師名、臨床検査、処置などのその他のテキスト特徴は、最初に空白区切り等でトークン分割し、その後、連続したトークンへ対応づける。</li>
+<li>数値情報の表現方法は以下の２つのアプローチが考えられる。
+
+<ol>
+<li>例えば、名前、値、単位の３つが連結された &ldquo;ヘモグロビン 12 g/dL&rdquo; は、１つのユニークなトークンへ</li>
+<li>分位数（上記の&rdquo;12&rdquo;はヘモグロビンの中央値かもしれないが、ヘモグロビンA1cの99番目のパーセンタイルかもしれない）と単位とを連結し、１つのユニークなトークンへ</li>
+</ol></li>
+<li>１つの特徴のユニークなトークン（医学的なコードや単語、観測されたパーセンタイル等）は、それぞれd次元の浮動小数点で表現されるベクトルeにする。</li>
+<li>学習データに少なくとも２回出現するトークンは、ベクトル化する。</li>
+<li>出現頻度が少ないトークンは、ハッシュ化され、少数の語彙外のベクトルにする。</li>
+<li>全てのベクトルはランダムに初期化。</li>
+<li>この一連の処理のイメージを以下に図示する。</li>
+</ul>
+
+<p><img src="images/45a4ad2a-dc59-11e8-9194-80ea0d8e7d86.png" alt="image" /></p>
+
+<ul>
+<li>時間の表現は利用するモデル毎に異なるマッピングを行う。</li>
+<li>RNNの場合、時間の対数値を扱い、上限値を決め、次の整数値へ丸める。</li>
+<li>フィードフォワードネットワークの場合、時間を1,2,4,8,&hellip;日といった対数増加する&rdquo;バケツ(bucket)&ldquo;へ変換する。年齢も同様。</li>
+<li>ブースティングモデルは、離散化の手法として、数千の時間を学習する。</li>
+</ul>
+
+<h2 id="既存手法-ベースライン-について">既存手法（ベースライン）について</h2>
+
+<ul>
+<li>死亡予測：NEWSスコア値＋最近の最低血圧・心拍数・呼吸数・体温・臨床検査値（24種）を入力とし、ロジスティック回帰で求める。これを「aEWS（早期警戒スコア）」と名付けて利用。</li>
+<li>再入院予測：HOSPITALスコアを入力とし、ロジスティックモデルで求める。＝「mHOSPITAL」。</li>
+<li>入院長期化予測：年齢・性別・体調カテゴリ・入院原因・処置・臨床検査値を入力とし、既存研究のLiuらの方法を実装。＝「mLiu」</li>
+</ul>
+
+<h3 id="補足-ベースラインの性能比較">（補足）ベースラインの性能比較</h3>
+
+<p>※補足資料によれば、性能値は下記の通り。<br />
+提案手法 ＞ 全ての特徴利用した改良版のベースライン ＞ 全ての特徴利用した先行事例のベースライン ＞ 限定された特徴（各タスクに合ったハンドクラフト特徴）を利用した先行事例のベースライン</p>
+
+<p><img src="/images/8f0b2778-dd03-11e8-8597-c3cf5bb2e03a.png" alt="image" /></p>
+
+<h2 id="提案手法について">提案手法について</h2>
+
+<p>※原著論文には詳細な説明が無いので、<a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41746-018-0029-1/MediaObjects/41746_2018_29_MOESM1_ESM.pdf">Supplementary Materials</a>を参照して以下に記載。</p>
+
+<ul>
+<li><strong>下記3つの推定モデルを組み合わせて（どのモデルの出力結果を採用するかは、投票で決める）、最終判断を出力。</strong>
+
+<ol>
+<li><strong>重み付きＲＮＮ（シーケンス・モデル）</strong></li>
+<li><strong>時間を意識したフィードフォワード・モデル</strong></li>
+<li><strong>時系列モデルを埋め込んだブースティング・モデル</strong></li>
+</ol></li>
+</ul>
+
+<h3 id="補足-1-重み付きｒｎｎ-シーケンス-モデル-について">（補足）1. 重み付きＲＮＮ（シーケンス・モデル）について</h3>
+
+<ul>
+<li>EHRデータを12時間ごとにイベントを分割。</li>
+<li>n層のＲＮＮとして、LSTM (Long Short-Term Memory network)を利用。LSTMは3つのゲート（忘却ゲート、入力ゲート、出力ゲート）を持ち、次状態のノードに前状態を伝える仕組みを備える。</li>
+<li>LSTMは下記の式で定義。</li>
+</ul>
+
+<p><img src="/images/a7ec447e-dc55-11e8-885c-cbc4c0e40d41.png" alt="image" /></p>
+
+<pre><code>- 第１式　ft：（時刻tにおける）忘却ゲート、σg：シグモイド関数、xt：時刻tの入力、ht-1：時刻t-1の隠れ出力、W,U：重み、b：バイアス
+- 第２式　it：（時刻tにおける）入力ゲート、（以下、略）
+- 第３式　ot：（時刻tにおける）出力ゲート、（以下、略）
+- 第４式　ct：（時刻tにおける）セル状態、σc：双曲線関数、（以下、略）
+- 第５式　ht：（時刻tにおける）隠れ出力
+</code></pre>
+
+<ul>
+<li>LSTMのハイパーパラメータは、Adagrad（バイナリ・タスク用の勾配法）とAdam（マルチラベル・タスク用の勾配法）の２つで最適化。その結果は下表の通り。（計算環境はGoogleVizierを利用し、1000回以上の試行で求めた）</li>
+</ul>
+
+<p><img src="/images/ea0adb44-dc56-11e8-8a78-322ebe6dd346.png" alt="image" /></p>
+
+<h3 id="補足-2-時間を意識したフィードフォワード-モデル">（補足）2. 時間を意識したフィードフォワード・モデル</h3>
+
+<ul>
+<li>連続したベクトル Ei (i=1,&hellip;,n)の最初にΔ0=0に対応するE0を追加する。</li>
+<li>このとき、次式で表わされる重みΒiを定義する（ソフトマックスで変換する）。</li>
+</ul>
+
+<p><img src="/images/4277f776-dc6b-11e8-83d5-9d88d4d7c9c0.png" alt="image" /></p>
+
+<ul>
+<li>この重みを掛けた和であるd次元のベクトルE=Σj Βj Ej を、フィードフォーワード・ニューラルネットワークへ入力。</li>
+<li>下記で示す関数 A(Δ) を定義</li>
+</ul>
+
+<p><img src="/images/ac5f14de-dc6c-11e8-80f8-89b57b64003a.png" alt="image" /></p>
+
+<ul>
+<li>ここで、ベクトルのk次元への写像を、k×d次元の行列Pの学習によって定義。</li>
+</ul>
+
+<p><img src="/images/84706d00-dc6d-11e8-828c-77b9cc5c1625.png" alt="image" /></p>
+
+<ul>
+<li>ベクトル化の次元dは、16～512の範囲。NNのレイヤー数は0～3（※10～512の幅を持ったネットワーク）</li>
+</ul>
+
+<h3 id="補足-3-時系列モデルを埋め込んだブースティング-モデル">（補足）3. 時系列モデルを埋め込んだブースティング・モデル</h3>
+
+<ul>
+<li>bigrams, trigrams, 4-gram トークンを全てのトークン化された特徴から作成。</li>
+<li>各特徴タプル（トークン名、値、時間）について、２クラスに分類するバイナリ決定ルール（下記）を作成。
+
+<ul>
+<li>（ルール１） 患者のタイムライン上のどこかの時点に変数Xが存在するか否か。</li>
+<li>（ルール２）患者のタイムラインにC回以上変数Xが存在するか否か。Cはデータセット中の各変数が取り得る整数値の範囲からランダムにピックアップされたもの。</li>
+<li>（ルール３）任意の時点t（但しt<T）における閾値Vよりも大きいもしくは小さな変数X （つまり、x>V かつ t&lt;T、もしくは、x≦V かつ t&lt;T）があるか否か。ここで、VとTは上記同様に、データセット中の取り得る値域からピックアップされたもの。</li>
+<li>（ルール４）ルール３の変更版。単純なバイナリ判断ではなく、x&lt;Vとなる回数の重み付き合計値。重みはTの因子の時間減衰に応じたHawkes process（確率的点過程モデルの１つ）によって決まる。このバイナリルールは重み付き合計値が（ランダムユーザーから選択されたA templatesよりも大きいA instance となるような）活性度 Aよりも大きいかどうか試験をすることで作成される。 VとTを選ぶために、 あるテンプレートインスタンスのランダム選択を使う。このとき、Aは次式でインスタンスから計算できる。</li>
+</ul></li>
+</ul>
+
+<p><img src="/images/07f634e2-dcf6-11e8-94ee-7f5eb9e62605.png" alt="image" /></p>
+
+<ul>
+<li>（ルール５）変数Xの&rdquo;最小値&rdquo;が、時刻t（但しt&lt;T）におけるVよりも大きいか否か。</li>
+<li>（ルール８）変数Xの&rdquo;最大値&rdquo;が、時刻t（但しt&lt;T）におけるVよりも大きいか否か。</li>
+<li>（ルール７）変数Xの&rdquo;平均値&rdquo;が、時刻t（但しt&lt;T）におけるVよりも大きいか否か。</li>
+<li>（ルール８，９）臨床検査値（例えば血圧など）が時間と共に変化することを捉えたルール。具体的には、ルール８は&rdquo;変化の加速度&rdquo;（ある時間窓で分割したときの変化量）が閾値Vよりも大きい/小さいか否か。ルール９は、&rdquo;時間T以内の変位&rdquo;が閾値Vよりも大きい/小さいか否か。</li>
+<li>（ルール１０）前記推定の結合ルール。（例えば、X1が存在し、かつ、C2より大きなX2の回数）。これら決定リストを&rdquo;述語(predicates)&ldquo;と呼び、決定木の正の枝を辿ったものと同義。</li>
+</ul>
+
+<h1 id="参考-hl7-fhirについて">（参考）HL7 FHIRについて</h1>
+
+<ul>
+<li>まず、HL7協会が診療情報交換のために診療⽂書（Clinical Document）を構造的及び意味的に記述する規約（XMLで記述）をHL7 CDA（Clinical Document Architecture）で定義。</li>
+<li>FHIRは、これまでのHL7 V2,V3 およびCDA各標準仕様の⼀番良い部分を活かしつつ最新のWEB標準（RESTFull WebAPI等）に対応することで、実装のしやすさに重点が置かれているデータフォーマット。</li>
+</ul>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/20181031/" data-tooltip="Scalable and accurate deep learning with electronic health records 解説">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 ishihara.jp. 
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/20181031/" data-tooltip="Scalable and accurate deep learning with electronic health records 解説">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/19012a76fcfa38fd855ce0ddc517350a?s=110" alt="" />
+    
+    <h4 id="about-card-name">ishihara.jp</h4>
+    
+      <div id="about-card-bio">Super bio with markdown support <strong>COOL</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Senior researcher (Computer Science)
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Japan
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ishihara-jp.github.io/post/20181101/">
+                <h3 class="media-heading">Scalable and accurate deep learning with electronic health records 解読</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">○論文
+* 原著（概要と結果）
+Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
+ 補足資料（具体的な手法説明）
+Supplementary Materials  ○ソースコード
+* FHIRデータ形式のソース
+https://github.com/google/fhir
+○関連記事
+* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
+ 医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
+https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校+シカゴ薬科大+スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+※全体概念図は下記
+感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ishihara-jp.github.io/post/20181031/">
+                <h3 class="media-heading">Scalable and accurate deep learning with electronic health records 解説</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">○論文
+* 原著（概要と結果）
+Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).
+ 補足資料（具体的な手法説明）
+Supplementary Materials  ○ソースコード
+* FHIRデータ形式のソース
+https://github.com/google/fhir
+○関連記事
+* Googleが病院を訪れた患者の身に「次に何が起こるか？」を予測する技術を開発
+https://gigazine.net/news/20180510-deep-learning-for-electronic-health-records/
+ 医療情報をクレンジングなしで容易に統合、AIで経過を高精度予測　googleの研究
+https://medit.tech/google-and-the-teams-repo/  簡単に言うと Google＋UCサンフランシスコ校+シカゴ薬科大+スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
+※全体概念図は下記
+感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ishihara-jp.github.io/post/20181028/">
+                <h3 class="media-heading">備忘録</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> 環境立ち上げコマンド 記事作成 画像挿入  画像フォルダを作成
+ staticフォルダ配下にimagesフォルダを作成
+static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
+![image](/images/2018-10-28 22.19.36.png)  こんな感じ    </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         3 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://ishihara-jp.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
