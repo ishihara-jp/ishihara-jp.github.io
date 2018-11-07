@@ -41,11 +41,11 @@ https://medit.tech/google-and-the-teams-repo/
       <pubDate>Mon, 24 Sep 2018 03:06:08 +0900</pubDate>
       
       <guid>https://ishihara-jp.github.io/2018/09/%E5%82%99%E5%BF%98%E9%8C%B2/</guid>
-      <description> 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
-記事作成 画像挿入  画像フォルダを作成
+      <description>環境立ち上げコマンド  Github に blog と ishihara-jp.github.io という名前のリポジトリを作る。 コマンドなどの手順か下記サイトをそのまま利用
+参考：https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/ テーマは hugo-tranquilpeak-theme を選択 Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを beautifulHugo にしていて、テーマ固有の問題かと思ったが・・・）  WARNING: calling IsSet with unsupported type &amp;quot;invalid&amp;quot; (&amp;lt;nil&amp;gt;) will always return false.  とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。   xcode-select --install brew upgrade hugo brew install go cd $HOME/go export GOPATH=$HOME/.go export PATH=$PATH:$GOPATH/bin  コメント欄の作成  DISQUSを導入
+参考：https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/ config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入  disqusShortname = &amp;quot;ishihara-jp&amp;quot;   記事作成 画像の挿入方法  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
-static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
-![image](/images/2018-10-28 22.19.36.png)  こんな感じ    </description>
+static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述</description>
     </item>
     
   </channel>

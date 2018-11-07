@@ -5,37 +5,37 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="generator" content="Hugo 0.50 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="ishihara.jp">
 <meta name="keywords" content="">
-<meta name="description" content=" 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
-記事作成 画像挿入  画像フォルダを作成
+<meta name="description" content="環境立ち上げコマンド  Github に blog と ishihara-jp.github.io という名前のリポジトリを作る。 コマンドなどの手順か下記サイトをそのまま利用
+参考：https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/ テーマは hugo-tranquilpeak-theme を選択 Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを beautifulHugo にしていて、テーマ固有の問題かと思ったが・・・）  WARNING: calling IsSet with unsupported type &quot;invalid&quot; (&lt;nil&gt;) will always return false.  とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。   xcode-select --install brew upgrade hugo brew install go cd $HOME/go export GOPATH=$HOME/.go export PATH=$PATH:$GOPATH/bin  コメント欄の作成  DISQUSを導入
+参考：https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/ config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入  disqusShortname = &quot;ishihara-jp&quot;   記事作成 画像の挿入方法  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
-static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
-![image](/images/2018-10-28 22.19.36.png)  こんな感じ    ">
+static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述">
 
 
-<meta property="og:description" content=" 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
-記事作成 画像挿入  画像フォルダを作成
+<meta property="og:description" content="環境立ち上げコマンド  Github に blog と ishihara-jp.github.io という名前のリポジトリを作る。 コマンドなどの手順か下記サイトをそのまま利用
+参考：https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/ テーマは hugo-tranquilpeak-theme を選択 Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを beautifulHugo にしていて、テーマ固有の問題かと思ったが・・・）  WARNING: calling IsSet with unsupported type &quot;invalid&quot; (&lt;nil&gt;) will always return false.  とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。   xcode-select --install brew upgrade hugo brew install go cd $HOME/go export GOPATH=$HOME/.go export PATH=$PATH:$GOPATH/bin  コメント欄の作成  DISQUSを導入
+参考：https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/ config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入  disqusShortname = &quot;ishihara-jp&quot;   記事作成 画像の挿入方法  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
-static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
-![image](/images/2018-10-28 22.19.36.png)  こんな感じ    ">
+static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述">
 <meta property="og:type" content="article">
 <meta property="og:title" content="備忘録">
 <meta name="twitter:title" content="備忘録">
 <meta property="og:url" content="https://ishihara-jp.github.io/2018/09/%E5%82%99%E5%BF%98%E9%8C%B2/">
 <meta property="twitter:url" content="https://ishihara-jp.github.io/2018/09/%E5%82%99%E5%BF%98%E9%8C%B2/">
 <meta property="og:site_name" content="ishihara-jp blog">
-<meta property="og:description" content=" 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
-記事作成 画像挿入  画像フォルダを作成
+<meta property="og:description" content="環境立ち上げコマンド  Github に blog と ishihara-jp.github.io という名前のリポジトリを作る。 コマンドなどの手順か下記サイトをそのまま利用
+参考：https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/ テーマは hugo-tranquilpeak-theme を選択 Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを beautifulHugo にしていて、テーマ固有の問題かと思ったが・・・）  WARNING: calling IsSet with unsupported type &quot;invalid&quot; (&lt;nil&gt;) will always return false.  とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。   xcode-select --install brew upgrade hugo brew install go cd $HOME/go export GOPATH=$HOME/.go export PATH=$PATH:$GOPATH/bin  コメント欄の作成  DISQUSを導入
+参考：https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/ config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入  disqusShortname = &quot;ishihara-jp&quot;   記事作成 画像の挿入方法  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
-static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
-![image](/images/2018-10-28 22.19.36.png)  こんな感じ    ">
-<meta name="twitter:description" content=" 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
-記事作成 画像挿入  画像フォルダを作成
+static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述">
+<meta name="twitter:description" content="環境立ち上げコマンド  Github に blog と ishihara-jp.github.io という名前のリポジトリを作る。 コマンドなどの手順か下記サイトをそのまま利用
+参考：https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/ テーマは hugo-tranquilpeak-theme を選択 Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを beautifulHugo にしていて、テーマ固有の問題かと思ったが・・・）  WARNING: calling IsSet with unsupported type &quot;invalid&quot; (&lt;nil&gt;) will always return false.  とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。   xcode-select --install brew upgrade hugo brew install go cd $HOME/go export GOPATH=$HOME/.go export PATH=$PATH:$GOPATH/bin  コメント欄の作成  DISQUSを導入
+参考：https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/ config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入  disqusShortname = &quot;ishihara-jp&quot;   記事作成 画像の挿入方法  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
-static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
-![image](/images/2018-10-28 22.19.36.png)  こんな感じ    ">
+static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述">
 <meta property="og:locale" content="ja">
 
   
@@ -253,11 +253,42 @@ static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.
 
 <h1 id="環境立ち上げコマンド">環境立ち上げコマンド</h1>
 
-<p>参考：<a href="https://blog.84b9cb.info/posts/started-hugo/">https://blog.84b9cb.info/posts/started-hugo/</a></p>
+<ul>
+<li>Github に <code>blog</code> と <code>ishihara-jp.github.io</code> という名前のリポジトリを作る。</li>
+<li>コマンドなどの手順か下記サイトをそのまま利用<br />
+参考：<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/">https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/</a></li>
+<li>テーマは <code>hugo-tranquilpeak-theme</code> を選択</li>
+<li>Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを <code>beautifulHugo</code> にしていて、テーマ固有の問題かと思ったが・・・）
+<code>
+WARNING: calling IsSet with unsupported type &quot;invalid&quot; (&lt;nil&gt;) will always return false.
+</code></li>
+<li>とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。</li>
+</ul>
+
+<pre><code>  xcode-select --install
+
+  brew upgrade hugo
+
+  brew install go
+  cd $HOME/go
+  export GOPATH=$HOME/.go
+  export PATH=$PATH:$GOPATH/bin
+</code></pre>
+
+<h2 id="コメント欄の作成">コメント欄の作成</h2>
+
+<ul>
+<li>DISQUSを導入<br />
+参考：<a href="https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/">https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/</a></li>
+<li>config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入
+<code>
+disqusShortname = &quot;ishihara-jp&quot;
+</code></li>
+</ul>
 
 <h1 id="記事作成">記事作成</h1>
 
-<h2 id="画像挿入">画像挿入</h2>
+<h2 id="画像の挿入方法">画像の挿入方法</h2>
 
 <ul>
 <li><p>画像フォルダを作成</p>
@@ -559,11 +590,11 @@ https://medit.tech/google-and-the-teams-repo/
                   Sep 9, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"> 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
-記事作成 画像挿入  画像フォルダを作成
+              <div class="media-content hide-xs font-merryweather">環境立ち上げコマンド  Github に blog と ishihara-jp.github.io という名前のリポジトリを作る。 コマンドなどの手順か下記サイトをそのまま利用
+参考：https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/ テーマは hugo-tranquilpeak-theme を選択 Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを beautifulHugo にしていて、テーマ固有の問題かと思ったが・・・）  WARNING: calling IsSet with unsupported type &quot;invalid&quot; (&lt;nil&gt;) will always return false.  とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。   xcode-select --install brew upgrade hugo brew install go cd $HOME/go export GOPATH=$HOME/.go export PATH=$PATH:$GOPATH/bin  コメント欄の作成  DISQUSを導入
+参考：https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/ config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入  disqusShortname = &quot;ishihara-jp&quot;   記事作成 画像の挿入方法  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
-static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述
-![image](/images/2018-10-28 22.19.36.png)  こんな感じ    </div>
+static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
