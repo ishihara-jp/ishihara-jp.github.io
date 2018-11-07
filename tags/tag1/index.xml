@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tag1 on ishihara-jp blog</title>
+    <link>https://ishihara-jp.github.io/tags/tag1/</link>
+    <description>Recent content in Tag1 on ishihara-jp blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 08 Nov 2018 00:51:31 +0900</lastBuildDate>
+    
+	<atom:link href="https://ishihara-jp.github.io/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Twitter-Get-Old-Tweets-Scraper 環境セットアップあれこれ</title>
+      <link>https://ishihara-jp.github.io/2018/11/twitter-get-old-tweets-scraper-%E7%92%B0%E5%A2%83%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%82%E3%82%8C%E3%81%93%E3%82%8C/</link>
+      <pubDate>Thu, 08 Nov 2018 00:51:31 +0900</pubDate>
+      
+      <guid>https://ishihara-jp.github.io/2018/11/twitter-get-old-tweets-scraper-%E7%92%B0%E5%A2%83%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%82%E3%82%8C%E3%81%93%E3%82%8C/</guid>
+      <description>ソースコード一式ダウンロード  https://github.com/PJHRobles/Twitter-Get-Old-Tweets-Scraper からローカルにリポジトリをクローン  インストール  make install でいきなりつまづく
+ エラー内容 Command &amp;quot;python setup.py egg_info&amp;quot; failed with error code 1 in /private/var/folders/1v/g2fqy_b139q__x889srs2ylh0000gn/T/pip-install-X9ymPh/get/  下記サイトを参考にトラブルシューティング開始
+ https://github.com/palantir/python-language-server/issues/370  brew reinstall python をやろうとしたところ、またまたエラー
+ Command &amp;quot;python setup.py egg_info&amp;quot; failed with error code 1 in ...うんたらかんたら  下記サイトに同様の症状の対処方法が載っていた
+ https://qiita.com/Jung0/items/d4012814e6fb1b694208 対処方法  $ sudo mkdir /usr/local/Frameworks $ sudo chown $(whoami):admin /usr/local/Frameworks   次に、brew reinstall python をやり直し。成功。
+ 次のステップ ``` echo &amp;lsquo;export PATH=&amp;ldquo;/usr/local/opt/sqlite/bin:$PATH&amp;rdquo;&amp;rsquo; &amp;gt;&amp;gt; ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

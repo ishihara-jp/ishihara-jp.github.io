@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ishihara-jp.github.io/2018/11/twitter-get-old-tweets-scraper-%E7%92%B0%E5%A2%83%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%82%E3%82%8C%E3%81%93%E3%82%8C/</loc>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ishihara-jp.github.io/2018/10/scalable-and-accurate-deep-learning-with-electronic-health-records-%E8%A7%A3%E8%AA%AD/</loc>
     <lastmod>2018-10-31T23:10:37+09:00</lastmod>
   </url>
@@ -24,18 +29,43 @@
   
   <url>
     <loc>https://ishihara-jp.github.io/post/</loc>
-    <lastmod>2018-10-31T23:10:37+09:00</lastmod>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ishihara-jp.github.io/categories/python/</loc>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ishihara-jp.github.io/categories/setup/</loc>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ishihara-jp.github.io/tags/tag1/</loc>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ishihara-jp.github.io/tags/tag2/</loc>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ishihara-jp.github.io/tags/</loc>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ishihara-jp.github.io/</loc>
-    <lastmod>2018-10-31T23:10:37+09:00</lastmod>
+    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   

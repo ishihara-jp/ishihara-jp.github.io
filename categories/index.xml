@@ -10,5 +10,23 @@
 	<atom:link href="https://ishihara-jp.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Python</title>
+      <link>https://ishihara-jp.github.io/categories/python/</link>
+      <pubDate>Thu, 08 Nov 2018 00:51:31 +0900</pubDate>
+      
+      <guid>https://ishihara-jp.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>https://ishihara-jp.github.io/categories/setup/</link>
+      <pubDate>Thu, 08 Nov 2018 00:51:31 +0900</pubDate>
+      
+      <guid>https://ishihara-jp.github.io/categories/setup/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
