@@ -13,10 +13,10 @@
     
     <item>
       <title>Scalable and accurate deep learning with electronic health records 解読</title>
-      <link>https://ishihara-jp.github.io/post/20181101/</link>
+      <link>https://ishihara-jp.github.io/2018/10/scalable-and-accurate-deep-learning-with-electronic-health-records-%E8%A7%A3%E8%AA%AD/</link>
       <pubDate>Wed, 31 Oct 2018 23:10:37 +0900</pubDate>
       
-      <guid>https://ishihara-jp.github.io/post/20181101/</guid>
+      <guid>https://ishihara-jp.github.io/2018/10/scalable-and-accurate-deep-learning-with-electronic-health-records-%E8%A7%A3%E8%AA%AD/</guid>
       <description>Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。
 ○論文
  原著（概要と結果）
@@ -37,10 +37,10 @@ https://medit.tech/google-and-the-teams-repo/
     
     <item>
       <title>備忘録</title>
-      <link>https://ishihara-jp.github.io/post/20181028/</link>
+      <link>https://ishihara-jp.github.io/2018/09/%E5%82%99%E5%BF%98%E9%8C%B2/</link>
       <pubDate>Mon, 24 Sep 2018 03:06:08 +0900</pubDate>
       
-      <guid>https://ishihara-jp.github.io/post/20181028/</guid>
+      <guid>https://ishihara-jp.github.io/2018/09/%E5%82%99%E5%BF%98%E9%8C%B2/</guid>
       <description> 環境立ち上げコマンド 参考：https://blog.84b9cb.info/posts/started-hugo/
 記事作成 画像挿入  画像フォルダを作成
  staticフォルダ配下にimagesフォルダを作成
