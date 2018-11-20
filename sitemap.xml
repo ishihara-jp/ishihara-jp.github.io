@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ishihara-jp.github.io/2018/11/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89%E5%AE%9F%E8%A1%8C%E3%81%A8%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-11-20T21:41:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ishihara-jp.github.io/2018/11/twitter-get-old-tweets-scraper-%E7%92%B0%E5%A2%83%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%82%E3%82%8C%E3%81%93%E3%82%8C/</loc>
     <lastmod>2018-11-08T00:51:31+09:00</lastmod>
   </url>
@@ -29,19 +34,19 @@
   
   <url>
     <loc>https://ishihara-jp.github.io/post/</loc>
-    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <lastmod>2018-11-20T21:41:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ishihara-jp.github.io/categories/python/</loc>
-    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <lastmod>2018-11-20T21:41:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ishihara-jp.github.io/categories/setup/</loc>
-    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <lastmod>2018-11-20T21:41:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -64,8 +69,20 @@
   </url>
   
   <url>
+    <loc>https://ishihara-jp.github.io/tags/twitter/</loc>
+    <lastmod>2018-11-20T21:41:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ishihara-jp.github.io/</loc>
-    <lastmod>2018-11-08T00:51:31+09:00</lastmod>
+    <lastmod>2018-11-20T21:41:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ishihara-jp.github.io/tags/%E3%82%B9%E3%82%AF%E3%83%AC%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0/</loc>
+    <lastmod>2018-11-20T21:41:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
