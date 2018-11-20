@@ -257,10 +257,19 @@
             <div class="main-content-wrap">
               <p></p>
 
-<p>前回に引き続き、Twitterのスクレイピングコードの解析。
-サンプルを見ると、結構おざなりなところが所々あった。</p>
+<p>また、後日、セットアップ方法はまとめるが、
+とりあえず、<a href="https://github.com/PJHRobles/Twitter-Get-Old-Tweets-Scraper">Twitter-Get-Old-Tweets-Scraper</a>のセットアップが完了した。</p>
 
-<p>まず、ユーザー名指定する場合、サンプルコードでは、</p>
+<p>結局のところ、インストールするパッケージリストに、いまは存在しないものがあり、そこでつっかかっていただけだった。無難に、一つ一つインストールできるものだけ、
+入れたら、普通に動いた（苦笑）</p>
+
+<p>ちなみに、今回はPython3.7環境にしている。（仕様上、Python2.x系へは対応していない模様。おそらくURLリクエスト系の仕様変更に伴うだろうから、たぶん簡単に直せると思う）</p>
+
+<p>さて、いよいよTwitterのスクレイピングコードの作成へ。
+まずは、チュートリアルにあるサンプルを実行しようとすると、一部できないところがあった。おいおい・・・</p>
+
+<p>サンプルコードの中身を見ると、結構おざなりなところが所々あった。
+まず、ユーザー名指定する場合、サンプルコードでは、</p>
 
 <pre><code>python main.py --username &quot;barackobama&quot; --max-tweets 1
 </code></pre>
@@ -336,8 +345,6 @@ if hasattr(tweet_criteria, 'until'):
 </code></pre>
 
 <p>となる。</p>
-
-<p><a href="https://twitter.com/i/search/timeline?f=realtime&amp;q=%20from%3Aaaa%20since%3A2016-01-01%20until%3A2018-11-21%20&amp;src=typd&amp;lang=en-US&amp;max_position=">https://twitter.com/i/search/timeline?f=realtime&amp;q=%20from%3Aaaa%20since%3A2016-01-01%20until%3A2018-11-21%20&amp;src=typd&amp;lang=en-US&amp;max_position=</a></p>
               
             </div>
           </div>
@@ -630,15 +637,15 @@ Command &quot;python setup.py egg_info&quot; failed with error code 1 in ...う�
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://ishihara-jp.github.io/2018/10/scalable-and-accurate-deep-learning-with-electronic-health-records-%E8%A7%A3%E8%AA%AD/">
-                <h3 class="media-heading">Scalable and accurate deep learning with electronic health records 解読</h3>
+              <a class="link-unstyled" href="https://ishihara-jp.github.io/2018/10/%E8%A7%A3%E8%AA%AD-scalable-and-accurate-deep-learning-with-electronic-health-records/">
+                <h3 class="media-heading">解読 Scalable and accurate deep learning with electronic health records</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
                   Oct 10, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦願ください。
+              <div class="media-content hide-xs font-merryweather">Google最新論文（18年）。最近ニュースでも話題になった入院患者の死亡率などを予測する深層学習の論文。 まだ、日本語でちゃんと解説された記事が無かったので、簡単なメモを作成。 間違いや、良くわからん訳などあるかもしれないが、そこはご容赦。
 ○論文
  原著（概要と結果）
 Alvin Rajkomar(Google), et.al. &ldquo;Scalable and accurate deep learning with electronic health records&rdquo;, npj Digital Medicinevolume 1, Article number: 18 (2018).

@@ -13,7 +13,7 @@
   </url>
   
   <url>
-    <loc>https://ishihara-jp.github.io/2018/10/scalable-and-accurate-deep-learning-with-electronic-health-records-%E8%A7%A3%E8%AA%AD/</loc>
+    <loc>https://ishihara-jp.github.io/2018/10/%E8%A7%A3%E8%AA%AD-scalable-and-accurate-deep-learning-with-electronic-health-records/</loc>
     <lastmod>2018-10-31T23:10:37+09:00</lastmod>
   </url>
   
@@ -29,6 +29,18 @@
   
   <url>
     <loc>https://ishihara-jp.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ishihara-jp.github.io/categories/deeplearning/</loc>
+    <lastmod>2018-10-31T23:10:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ishihara-jp.github.io/categories/healthcare/</loc>
+    <lastmod>2018-10-31T23:10:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   

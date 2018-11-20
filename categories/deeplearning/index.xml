@@ -1,38 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on ishihara-jp blog</title>
-    <link>https://ishihara-jp.github.io/post/</link>
-    <description>Recent content in Posts on ishihara-jp blog</description>
+    <title>Deeplearning on ishihara-jp blog</title>
+    <link>https://ishihara-jp.github.io/categories/deeplearning/</link>
+    <description>Recent content in Deeplearning on ishihara-jp blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 20 Nov 2018 21:41:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Oct 2018 23:10:37 +0900</lastBuildDate>
     
-	<atom:link href="https://ishihara-jp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ishihara-jp.github.io/categories/deeplearning/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>サンプルコード実行と解析</title>
-      <link>https://ishihara-jp.github.io/2018/11/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89%E5%AE%9F%E8%A1%8C%E3%81%A8%E8%A7%A3%E6%9E%90/</link>
-      <pubDate>Tue, 20 Nov 2018 21:41:00 +0900</pubDate>
-      
-      <guid>https://ishihara-jp.github.io/2018/11/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89%E5%AE%9F%E8%A1%8C%E3%81%A8%E8%A7%A3%E6%9E%90/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Twitter-Get-Old-Tweets-Scraper 環境セットアップあれこれ</title>
-      <link>https://ishihara-jp.github.io/2018/11/twitter-get-old-tweets-scraper-%E7%92%B0%E5%A2%83%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%82%E3%82%8C%E3%81%93%E3%82%8C/</link>
-      <pubDate>Thu, 08 Nov 2018 00:51:31 +0900</pubDate>
-      
-      <guid>https://ishihara-jp.github.io/2018/11/twitter-get-old-tweets-scraper-%E7%92%B0%E5%A2%83%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%82%E3%82%8C%E3%81%93%E3%82%8C/</guid>
-      <description>ソースコード一式ダウンロード  https://github.com/PJHRobles/Twitter-Get-Old-Tweets-Scraper からローカルにリポジトリをクローン  インストール  make install でいきなりつまづく   Command &amp;quot;python setup.py egg_info&amp;quot; failed with error code 1 in /private/var/folders/1v/g2fqy_b139q__x889srs2ylh0000gn/T/pip-install-X9ymPh/get/   下記サイトを参考にトラブルシューティング開始  https://github.com/palantir/python-language-server/issues/370  brew reinstall python をやろうとしたところ、またまたエラー
-Command &amp;quot;python setup.py egg_info&amp;quot; failed with error code 1 in ...うんたらかんたら
- 下記サイトに同様の症状の対処方法が載っていた
- https://qiita.com/Jung0/items/d4012814e6fb1b694208 対処方法  $ sudo mkdir /usr/local/Frameworks $ sudo chown $(whoami):admin /usr/local/Frameworks   次に、brew reinstall python をやり直し。成功。
- 次のステップ
-   echo &#39;export PATH=&amp;quot;/usr/local/opt/sqlite/bin:$PATH&amp;quot;&#39; &amp;gt;&amp;gt; ~/.</description>
-    </item>
     
     <item>
       <title>解読 Scalable and accurate deep learning with electronic health records</title>
@@ -56,19 +33,6 @@ https://medit.tech/google-and-the-teams-repo/
   簡単に言うと Google＋UCサンフランシスコ校+シカゴ薬科大+スタンフォード大の研究チームが、複数の医療機関の電子カルテ（EHR）情報を標準フォーマット（FHIR）で統合し、入院患者の経過（院内死亡、計画外再入院、入院長期化）と退院診断名を深層学習等を用いて予測するアルゴリズムを開発。すべてのタスクにおいて既存手法を上回る精度を達成。これにより、早期（例えば入院後24時間以内）に高リスクの患者を検知しアラートを挙げることで、医療従事者は何らかの対策を打てるようになる。
 ※全体概念図は下記
 感想  転移学習のようなネットワーク側でデータ形式の違いを吸収するのではなく、ネットワークへデータ入力する前に、生データからベクトル化(Embedding)する前処理で吸収。（帰納学習ではなく、表現学習の論文とみると合点がいった） 前処理は、標準コード化、正規化、自然言語処理などの様々な手法の組み合わせ。この論文の最も注力した部分であり、後段処理の深層学習に頼らず、各種データの特性に合わせて（愚直に）作り込んでいる印象。 推定モデルに関しては、時系列データ向け深層学習（LSTM）、フィードフォワード・ニューラルネットワーク、ブースティングモデルの計３つの（オーソドックスな）手法に並行してデータ入力し、得られた３つの出力から多数決により１つ選ぶ。これを最終的な推定結果とした。 ベースラインとした手法に、本研究で得た全データのベクトルを入力した場合と、先行事例で扱っていた限定データの特徴量を入力した場合で性能比較。前者の方が後者よりも高い性能を得たことから、本研究のように臨床の様々なデータを余すこと無く使うことが重要であることも示唆。  概要  EHR生データを全てFHIR形式（下記、参考参照）へ記録し、深層学習などを用いて複数タスク（①患者の院内死亡、②計画外再入院、③入院長期化、④退院診断名）の推定を行った。 タスクを選んだ理由  院内死亡：医療の重要な結果 計画外再入院：医療の質を客観評価できる指標 入院長期化：医療資源の活用指標 退院診断名：患者の問題理解の指標  結果     タスク 提案手法 従来手法     院内死亡 0.</description>
-    </item>
-    
-    <item>
-      <title>備忘録</title>
-      <link>https://ishihara-jp.github.io/2018/09/%E5%82%99%E5%BF%98%E9%8C%B2/</link>
-      <pubDate>Mon, 24 Sep 2018 03:06:08 +0900</pubDate>
-      
-      <guid>https://ishihara-jp.github.io/2018/09/%E5%82%99%E5%BF%98%E9%8C%B2/</guid>
-      <description>環境立ち上げコマンド  Github に blog と ishihara-jp.github.io という名前のリポジトリを作る。 コマンドなどの手順か下記サイトをそのまま利用
-参考：https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/ テーマは hugo-tranquilpeak-theme を選択 Hugoコマンドでエラー（？）が出たため、正しくサイトが出力されていない。（最初はテーマを beautifulHugo にしていて、テーマ固有の問題かと思ったが・・・）  WARNING: calling IsSet with unsupported type &amp;quot;invalid&amp;quot; (&amp;lt;nil&amp;gt;) will always return false.  とりあえず対策として、xcode-selectのインストールと、goのインストールと、Hugoのアップグレードをやってみたら、なんか解決した。   xcode-select --install brew upgrade hugo brew install go cd $HOME/go export GOPATH=$HOME/.go export PATH=$PATH:$GOPATH/bin  コメント欄の作成  DISQUSを導入
-参考：https://monoworks.co.jp/post/2016-11-13-adding-disqus-to-hugo-template/ config.tomlに上記サイトで作成したショートカット名（自分の場合はishihara-jp）を記入  disqusShortname = &amp;quot;ishihara-jp&amp;quot;   記事作成 画像の挿入方法  画像フォルダを作成
- staticフォルダ配下にimagesフォルダを作成
-static/images  このimagesフォルダに適当な画像（例：2018-10-28 22.19.36.png）をコピーして、markdown形式で記述</description>
     </item>
     
   </channel>
