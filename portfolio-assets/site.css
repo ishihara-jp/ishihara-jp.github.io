@@ -199,7 +199,7 @@ footer{flex-wrap:wrap;padding:25px 7%}
 .expertise-story .eyebrow{font-size:10px;letter-spacing:1.1px;margin-bottom:20px}
 .expertise-story h3{font-size:23px;line-height:1.7;margin:0 0 22px}
 .expertise-story p{font-size:13px;line-height:1.95}
-.expertise-takeaway{color:var(--muted);font-size:11px!important;border-left:2px solid var(--accent);padding-left:12px;margin-top:24px}
+
 .expertise-story .text-link{font-size:11px}
 
 details{margin-top:24px;border-top:1px solid var(--line);font-size:12px}
@@ -238,7 +238,31 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .expertise-story:nth-child(2) .specialty-plate{grid-column:2;grid-row:1}.expertise-story:nth-child(2) .expertise-copy{grid-column:1;grid-row:1}
 .expertise-story .specialty-plate{margin:0}.specialty-plate img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;background:#f5f3eb}.actual-research img{background:#fff;padding:24px;border:1px solid var(--line)}
 .specialty-plate figcaption{font-family:"Yu Mincho",serif;font-size:17px;line-height:1.6;margin-top:18px}.specialty-plate figcaption>span{display:block;font:9px/1.8 monospace;letter-spacing:1.5px;color:var(--accent);margin-bottom:7px}.specialty-plate figcaption small{display:block;font:10px/1.7 "Yu Gothic",sans-serif;color:var(--muted);margin-top:7px}
-.expertise-story .expertise-copy>.eyebrow{margin:0 0 16px}.expertise-story h3{font-size:28px;line-height:1.65;margin-bottom:22px}.expertise-story p{font-size:14px}.expertise-story details{margin-top:20px}.expertise-story .expertise-takeaway{font-size:12px!important}.convergence-bridge{padding-top:35px}
+.expertise-story .expertise-copy>.eyebrow{margin:0 0 16px}.expertise-story h3{font-size:28px;line-height:1.65;margin-bottom:22px}.expertise-story p{font-size:14px}.expertise-story details{margin-top:20px}.convergence-bridge{padding-top:35px}
 @media(max-width:800px){.expertise-story{grid-template-columns:1fr;gap:25px;padding:35px 0}.expertise-story:nth-child(2) .specialty-plate,.expertise-story:nth-child(2) .expertise-copy{grid-column:auto;grid-row:auto}.expertise-story h3{font-size:25px}.specialty-plate figcaption{font-size:16px}.actual-research img{padding:15px}}
 
 .specialty-plate img{aspect-ratio:auto}.actual-research img{padding:0}.specialty-plate a{display:block}
+
+/* Readable, illustrative intervention examples; Japanese stays native text. */
+#behavior .expertise-copy{grid-column:1/-1;grid-row:1;max-width:780px}
+#behavior .behavior-example{grid-column:1/-1;grid-row:2}
+.intervention-demo{border:1px solid var(--line);background:#eeeee5;padding:32px}
+.demo-heading>span{font-family:"Yu Mincho",serif;font-size:25px;color:var(--ink)}
+.expertise-story .demo-heading p{font-size:13px;margin:8px 0 26px}
+.message-comparison{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.message-case{min-width:0;padding:22px;background:#f9f8f2;border-top:3px solid #527364}
+.message-case:nth-child(2){border-color:#b8795a}
+.case-index{font:11px/1.6 "Yu Gothic",sans-serif;letter-spacing:1px;color:var(--muted)}
+.message-case h4{font-size:17px;line-height:1.7;margin:12px 0 5px;font-weight:500}
+.expertise-story .person-voice{font-size:12px;color:var(--muted);margin:0 0 20px}
+.intervention-message{background:#e3e9df;padding:18px;border-radius:0 12px 12px 12px;min-height:145px}
+.message-case:nth-child(2) .intervention-message{background:#efe0d3}
+.intervention-message>span{font-size:10px;letter-spacing:1px;color:var(--muted)}
+.expertise-story .intervention-message p{font-size:16px;line-height:1.9;margin:10px 0 0;font-weight:500}
+.expertise-story .design-reason{font-size:11px;line-height:1.9;margin:20px 0 0;color:var(--muted)}
+.design-reason b{display:inline-block;font-size:12px;font-weight:500;color:var(--ink);margin-bottom:7px}
+.demo-engine{display:flex;align-items:center;gap:25px;border-top:1px solid var(--line);margin-top:25px;padding-top:20px}
+.demo-engine>b{font-size:13px;white-space:nowrap;font-weight:500}
+.expertise-story .demo-engine p{font-size:12px;margin:0;line-height:1.9}
+.expertise-story .demo-disclaimer{font-size:10px;color:var(--muted);margin:18px 0 0;line-height:1.7}
+@media(max-width:800px){.intervention-demo{padding:20px}.demo-heading>span{font-size:21px}.message-comparison{grid-template-columns:1fr;gap:20px}.message-case{padding:18px}.intervention-message{min-height:0}.demo-engine{display:block}.expertise-story .demo-engine p{margin-top:10px}.demo-engine br{display:none}.intervention-message br{display:none}}

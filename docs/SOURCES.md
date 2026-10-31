@@ -74,3 +74,8 @@ Replaced the video-editing patent with JP6344039B2 as requested. The Japan Insti
 The abstract atlas and hand illustrations are superseded on the live page. Ripple Presentation is restored to the earlier specific trackback screenshot, unmodified. New generated CT and behavioral-intervention figures explain concrete input-processing-output workflows rather than metaphors. Both are marked explanatory reconstructions, not real research-system outputs. The synthetic CT includes a fictional pancreas region and candidate finding; no accuracy or diagnostic claim. The behavioral messages are illustrative, not actual optimized outputs or demonstrated efficacy.
 
 Read public BXPF parts 2 and 3: https://blog.fltech.dev/entry/2026/04/01/bxpf-2-intervention-design-ja and https://blog.fltech.dev/entry/2026/04/02/bxpf-3-umi-ja . Part 2 supports task 5W -> AI-assisted MoA inference -> evidence-linked BCT selection; part 3 supports tailoring apps to use cases and individual characteristics. The user's direct account also supplies the personality/behavior-characteristic aspect. Do not conflate psychometric personality measurement with MoA inference, or imply a proven globally optimal intervention. No correspondence matrix or quantitative evaluation is invented in the selected figure.
+
+
+## 2026-10-31: 日本語の個別介入例
+行動変容の英語生成図を、日本語のHTML図版へ置換。同じセキュリティ学習課題で、着手への不安／先延ばしという障壁の違いとメッセージの違いを示す。公開記事第2・3回のアプローチを伝える編集上の仮想例であり、実際の生成ログ・性格診断・検証済みの個別マッピングではない。MoA/BCTの候補は説明用で、効果は主張しない。
+図版下は時期・所属表記へ。2006年はRippleの発表年、2022年は膵臓AI共同研究発表年。2025年の行動変容研究グループ表記は本人の指定による。画像の由来と合成表示は本文詳細に保持。培ったものの反復文を削除。
