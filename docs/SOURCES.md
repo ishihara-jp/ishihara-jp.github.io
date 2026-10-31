@@ -16,3 +16,16 @@
 Haptic Anatomy: research hypothesis, not demonstrated improvement in screening rates. No n=120 survey claim, priority/world-first claim, ethics status, past planned experiment dates or unpublished outcomes. The hero SVG is an original conceptual illustration, not patient anatomy, an experimental result, or a reconstruction of Ripple Presentation.
 
 Profile affiliation is limited to the user-confirmed doctoral study. No employment title or degree completion claimed. The original legacy blog is retained unchanged as historical material.
+
+## Added public evidence and visual direction
+
+- BXPF: https://blog.fltech.dev/entry/2026/03/31/bxpf-1-introduction-ja . Named coauthors and published March 31, 2026; paraphrase limited to behavioral principles (MoA), behavior change techniques (BCT), AI and evidence-based planning. No internal performance figures or unreleased details.
+- Book: https://www.seishinshobo.co.jp/book/b10193489.html . Publisher page directly fetched and inspected. Title: コンバージングテクノロジー―心理・身体・社会をつなぐAI時代の人間理解. Published August 2026; column 7 and Ishihara attribution confirmed in contents. We link the listing and do not reproduce the column text.
+- Trackback visualization / Interaction 2006: https://www.interaction-ipsj.org/archives/paper2006/pdf2006/aural/paper0013.pdf . APVIS paper also documents weblog trackback visualization: https://www.iplab.cs.tsukuba.ac.jp/paper/international/ishihara_apvis2006.pdf . Described as topic propagation; no priority or predictive-virality claim.
+- KICSS Best Student Paper: https://www.cs.tsukuba.ac.jp/topic06.html . This award is for Visualization for Sharing Knowledge in Creation Processes, not the Interaction paper; the distinction is explicit.
+- Department recognition: https://www.cs.tsukuba.ac.jp/internal/awards.html . University record says 専攻長表彰, FY2006, rather than 研究科長表彰. Used official wording.
+- Medical imaging award report: https://www.ipsj.or.jp/dp/contents/publication/41/S1101-award.html . Connects the public 2017 paper and the joint 2019 award.
+- User-supplied 2025 research introduction slides: inspected for the three-field framing and the trackback visual. Only the university-era trackback screenshot (image2.png) is included. Full deck, application number, private company research examples, slide notes and embedded files are excluded.
+- User-supplied portrait: authorized for this portfolio in the current request. Composed with responsive CSS cropping, grayscale and a paper-toned fade. Face and body are not regenerated. WebP copy is resized to 1800 by 1200, re-encoded with no EXIF metadata (47.6 KB); original stays outside the published repository. Original is retained locally outside the repository as well.
+- Design reference: https://www.pentagram.com/about/giorgia-lupi . Observed large typography, neutral portrait treatment and generous space; original composition and no borrowed imagery or code.
+- The three-circle SVG is a new explanatory diagram of HCI, Computer Vision and Digital Health, with Haptic Anatomy at their intersection. It is not an experimental result.
