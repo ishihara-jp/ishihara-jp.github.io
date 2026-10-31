@@ -59,3 +59,11 @@ Replaced the video-editing patent with JP6344039B2 as requested. The Japan Insti
 - Consolidate by three actual specialties (HCI, Computer Vision, Digital Health), then connect them to current doctoral research. Do not present visualization, medical imaging and haptics as three unrelated career stages or conflate them with the three specialties.
 - Each work is described once. Full titles, patent number, honors and supporting links live under native details/summary disclosures in the relevant specialty. Existing primary-source links, joint-author/award distinctions and public-information boundaries are retained.
 - Preserve portrait composition and all old blog files. No new empirical or biographical claims introduced.
+
+
+## Academic editorial illustrations
+
+- HCI plate is the actual Ripple Presentation comparison diagram (image6.png) from the user-provided university research slide deck, used with the user's authorization. It is clearly labelled RESEARCH FIGURE. The actual trackback screenshot remains in the detailed evidence section.
+- Medical-image analysis plate and behavioral-feedback plate are original images generated with the built-in image generation tool, not copied from third-party material. Labels explicitly say AI-generated conceptual illustrations, not clinical scans, analysis results, experiment designs or measurements.
+- Original selected PNG outputs retained locally in ../illustrations; optimized WebP copies served from portfolio-assets. The illustrative pancreas drawing is not a medically validated anatomy plate. No quantitative or mechanistic claims are inferred from the artwork.
+- Generation prompts and art direction: docs/IMAGE_PROMPTS.md. No change to the evidentiary status of any actual research claim.
