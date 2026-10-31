@@ -266,3 +266,5 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .expertise-story .demo-engine p{font-size:12px;margin:0;line-height:1.9}
 .expertise-story .demo-disclaimer{font-size:10px;color:var(--muted);margin:18px 0 0;line-height:1.7}
 @media(max-width:800px){.intervention-demo{padding:20px}.demo-heading>span{font-size:21px}.message-comparison{grid-template-columns:1fr;gap:20px}.message-case{padding:18px}.intervention-message{min-height:0}.demo-engine{display:block}.expertise-story .demo-engine p{margin-top:10px}.demo-engine br{display:none}.intervention-message br{display:none}}
+
+.behavior-example img{border:1px solid var(--line)}.convergence-bridge .bridge-explanation{font-family:"Yu Gothic",sans-serif;font-size:14px;line-height:2;margin:20px auto;max-width:760px}.behavior-example a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
