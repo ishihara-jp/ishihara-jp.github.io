@@ -268,3 +268,7 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 @media(max-width:800px){.intervention-demo{padding:20px}.demo-heading>span{font-size:21px}.message-comparison{grid-template-columns:1fr;gap:20px}.message-case{padding:18px}.intervention-message{min-height:0}.demo-engine{display:block}.expertise-story .demo-engine p{margin-top:10px}.demo-engine br{display:none}.intervention-message br{display:none}}
 
 .behavior-example img{border:1px solid var(--line)}.convergence-bridge .bridge-explanation{font-family:"Yu Gothic",sans-serif;font-size:14px;line-height:2;margin:20px auto;max-width:760px}.behavior-example a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+
+/* Behavioral research uses the same image-and-copy rhythm as other fields. */
+#behavior .behavior-example{grid-column:1;grid-row:1}#behavior .expertise-copy{grid-column:2;grid-row:1;max-width:none}
+@media(max-width:800px){#behavior .behavior-example,#behavior .expertise-copy{grid-column:auto;grid-row:auto}}
