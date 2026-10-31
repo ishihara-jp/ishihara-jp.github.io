@@ -99,3 +99,7 @@ behavior-evidence.svg はTechBlog第1回の公開アーキテクチャ、第2回
 
 ## 2026-10-31: 03を三つの要素へ圧縮
 前版の画面図から細かい5W入力欄、ヘッダー、用途タブ、施策候補欄を削除。業務課題・MoA/BCTのエビデンス対応・介入メッセージの三点を大きく配置し、サムネイルでの認識を優先。公開研究の説明用再構成という位置付けは継続。採用画像behavior-platform-simple.webp、生成指示BEHAVIOR_THREE_POINT_PROMPT.md。
+
+
+## 2026-10-31: 直前のプラットフォーム図へ復元
+三点版は単純化しすぎたため不採用。業務課題入力、MoA/BCT対応、施策候補、アプリ展開が見えるbehavior-platform.webpへ戻した。
