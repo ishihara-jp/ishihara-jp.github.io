@@ -67,3 +67,10 @@ Replaced the video-editing patent with JP6344039B2 as requested. The Japan Insti
 - Medical-image analysis plate and behavioral-feedback plate are original images generated with the built-in image generation tool, not copied from third-party material. Labels explicitly say AI-generated conceptual illustrations, not clinical scans, analysis results, experiment designs or measurements.
 - Original selected PNG outputs retained locally in ../illustrations; optimized WebP copies served from portfolio-assets. The illustrative pancreas drawing is not a medically validated anatomy plate. No quantitative or mechanistic claims are inferred from the artwork.
 - Generation prompts and art direction: docs/IMAGE_PROMPTS.md. No change to the evidentiary status of any actual research claim.
+
+
+## Concrete research-illustration correction
+
+The abstract atlas and hand illustrations are superseded on the live page. Ripple Presentation is restored to the earlier specific trackback screenshot, unmodified. New generated CT and behavioral-intervention figures explain concrete input-processing-output workflows rather than metaphors. Both are marked explanatory reconstructions, not real research-system outputs. The synthetic CT includes a fictional pancreas region and candidate finding; no accuracy or diagnostic claim. The behavioral messages are illustrative, not actual optimized outputs or demonstrated efficacy.
+
+Read public BXPF parts 2 and 3: https://blog.fltech.dev/entry/2026/04/01/bxpf-2-intervention-design-ja and https://blog.fltech.dev/entry/2026/04/02/bxpf-3-umi-ja . Part 2 supports task 5W -> AI-assisted MoA inference -> evidence-linked BCT selection; part 3 supports tailoring apps to use cases and individual characteristics. The user's direct account also supplies the personality/behavior-characteristic aspect. Do not conflate psychometric personality measurement with MoA inference, or imply a proven globally optimal intervention. No correspondence matrix or quantitative evaluation is invented in the selected figure.

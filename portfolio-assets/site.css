@@ -240,3 +240,5 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .specialty-plate figcaption{font-family:"Yu Mincho",serif;font-size:17px;line-height:1.6;margin-top:18px}.specialty-plate figcaption>span{display:block;font:9px/1.8 monospace;letter-spacing:1.5px;color:var(--accent);margin-bottom:7px}.specialty-plate figcaption small{display:block;font:10px/1.7 "Yu Gothic",sans-serif;color:var(--muted);margin-top:7px}
 .expertise-story .expertise-copy>.eyebrow{margin:0 0 16px}.expertise-story h3{font-size:28px;line-height:1.65;margin-bottom:22px}.expertise-story p{font-size:14px}.expertise-story details{margin-top:20px}.expertise-story .expertise-takeaway{font-size:12px!important}.convergence-bridge{padding-top:35px}
 @media(max-width:800px){.expertise-story{grid-template-columns:1fr;gap:25px;padding:35px 0}.expertise-story:nth-child(2) .specialty-plate,.expertise-story:nth-child(2) .expertise-copy{grid-column:auto;grid-row:auto}.expertise-story h3{font-size:25px}.specialty-plate figcaption{font-size:16px}.actual-research img{padding:15px}}
+
+.specialty-plate img{aspect-ratio:auto}.actual-research img{padding:0}.specialty-plate a{display:block}
