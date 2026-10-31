@@ -51,3 +51,11 @@ Replaced the video-editing patent with JP6344039B2 as requested. The Japan Insti
 - https://www.youtube.com/watch?v=oBqJIqmb1Dw : user-supplied public Precision Health introduction. Text fetch unavailable; link labelled by user-provided context, no inferred transcript, exact title, views, speaker identity or quantitative claims.
 - https://ieeexplore.ieee.org/abstract/document/10611948/ : IEEE page unavailable to text reader; title and matching document link confirmed via the research group's public article https://blog.fltech.dev/entry/2024/09/13/WCCI2024-PrecisionHealth . Title: Lightweight Detection Architecture Adapted to Small Lesions Using Multiscale Sampling Method, IEEE CEC 2024. Do not label this a journal paper or Ishihara first-author paper.
 - https://link.springer.com/article/10.1007/s11604-025-01859-6 : full open-access follow-up reader-performance article inspected. Reference 14 verifies Karasudani A, Ishihara M, et al., IEEE CEC 2024, pages 1–8. Ishihara is also a coauthor of this Jpn J Radiol article (online 2025, issue 2026). It concerns hepatic lesion detection on EOB-enhanced hepatobiliary-phase MRI, not diagnosis of every form of primary liver cancer. A link is provided without copying clinical images or selectively promoting sensitivity statistics.
+
+
+## Narrative consolidation (after materials-complete checkpoint)
+
+- Prior full-content version preserved in GitHub branch checkpoint/materials-complete-20261031 at 9c520a8406453a1d465206a2ba055c180049021c before editing.
+- Consolidate by three actual specialties (HCI, Computer Vision, Digital Health), then connect them to current doctoral research. Do not present visualization, medical imaging and haptics as three unrelated career stages or conflate them with the three specialties.
+- Each work is described once. Full titles, patent number, honors and supporting links live under native details/summary disclosures in the relevant specialty. Existing primary-source links, joint-author/award distinctions and public-information boundaries are retained.
+- Preserve portrait composition and all old blog files. No new empirical or biographical claims introduced.
