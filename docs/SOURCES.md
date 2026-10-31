@@ -51,3 +51,59 @@ Replaced the video-editing patent with JP6344039B2 as requested. The Japan Insti
 - https://www.youtube.com/watch?v=oBqJIqmb1Dw : user-supplied public Precision Health introduction. Text fetch unavailable; link labelled by user-provided context, no inferred transcript, exact title, views, speaker identity or quantitative claims.
 - https://ieeexplore.ieee.org/abstract/document/10611948/ : IEEE page unavailable to text reader; title and matching document link confirmed via the research group's public article https://blog.fltech.dev/entry/2024/09/13/WCCI2024-PrecisionHealth . Title: Lightweight Detection Architecture Adapted to Small Lesions Using Multiscale Sampling Method, IEEE CEC 2024. Do not label this a journal paper or Ishihara first-author paper.
 - https://link.springer.com/article/10.1007/s11604-025-01859-6 : full open-access follow-up reader-performance article inspected. Reference 14 verifies Karasudani A, Ishihara M, et al., IEEE CEC 2024, pages 1–8. Ishihara is also a coauthor of this Jpn J Radiol article (online 2025, issue 2026). It concerns hepatic lesion detection on EOB-enhanced hepatobiliary-phase MRI, not diagnosis of every form of primary liver cancer. A link is provided without copying clinical images or selectively promoting sensitivity statistics.
+
+
+## Narrative consolidation (after materials-complete checkpoint)
+
+- Prior full-content version preserved in GitHub branch checkpoint/materials-complete-20261031 at 9c520a8406453a1d465206a2ba055c180049021c before editing.
+- Consolidate by three actual specialties (HCI, Computer Vision, Digital Health), then connect them to current doctoral research. Do not present visualization, medical imaging and haptics as three unrelated career stages or conflate them with the three specialties.
+- Each work is described once. Full titles, patent number, honors and supporting links live under native details/summary disclosures in the relevant specialty. Existing primary-source links, joint-author/award distinctions and public-information boundaries are retained.
+- Preserve portrait composition and all old blog files. No new empirical or biographical claims introduced.
+
+
+## Academic editorial illustrations
+
+- HCI plate is the actual Ripple Presentation comparison diagram (image6.png) from the user-provided university research slide deck, used with the user's authorization. It is clearly labelled RESEARCH FIGURE. The actual trackback screenshot remains in the detailed evidence section.
+- Medical-image analysis plate and behavioral-feedback plate are original images generated with the built-in image generation tool, not copied from third-party material. Labels explicitly say AI-generated conceptual illustrations, not clinical scans, analysis results, experiment designs or measurements.
+- Original selected PNG outputs retained locally in ../illustrations; optimized WebP copies served from portfolio-assets. The illustrative pancreas drawing is not a medically validated anatomy plate. No quantitative or mechanistic claims are inferred from the artwork.
+- Generation prompts and art direction: docs/IMAGE_PROMPTS.md. No change to the evidentiary status of any actual research claim.
+
+
+## Concrete research-illustration correction
+
+The abstract atlas and hand illustrations are superseded on the live page. Ripple Presentation is restored to the earlier specific trackback screenshot, unmodified. New generated CT and behavioral-intervention figures explain concrete input-processing-output workflows rather than metaphors. Both are marked explanatory reconstructions, not real research-system outputs. The synthetic CT includes a fictional pancreas region and candidate finding; no accuracy or diagnostic claim. The behavioral messages are illustrative, not actual optimized outputs or demonstrated efficacy.
+
+Read public BXPF parts 2 and 3: https://blog.fltech.dev/entry/2026/04/01/bxpf-2-intervention-design-ja and https://blog.fltech.dev/entry/2026/04/02/bxpf-3-umi-ja . Part 2 supports task 5W -> AI-assisted MoA inference -> evidence-linked BCT selection; part 3 supports tailoring apps to use cases and individual characteristics. The user's direct account also supplies the personality/behavior-characteristic aspect. Do not conflate psychometric personality measurement with MoA inference, or imply a proven globally optimal intervention. No correspondence matrix or quantitative evaluation is invented in the selected figure.
+
+
+## 2026-10-31: 日本語の個別介入例
+行動変容の英語生成図を、日本語のHTML図版へ置換。同じセキュリティ学習課題で、着手への不安／先延ばしという障壁の違いとメッセージの違いを示す。公開記事第2・3回のアプローチを伝える編集上の仮想例であり、実際の生成ログ・性格診断・検証済みの個別マッピングではない。MoA/BCTの候補は説明用で、効果は主張しない。
+図版下は時期・所属表記へ。2006年はRippleの発表年、2022年は膵臓AI共同研究発表年。2025年の行動変容研究グループ表記は本人の指定による。画像の由来と合成表示は本文詳細に保持。培ったものの反復文を削除。
+
+
+## 2026-10-31: エビデンスから実装への全体図
+behavior-evidence.svg はTechBlog第1回の公開アーキテクチャ、第2回の5W→MoA推定→BCT対応付け、第3回の用途別実装を、日本語のオリジナル図版として再構成。原図の写真や画面は転載していない。AIが全てを直接診断・最適化するとは表現せず、推定・施策提案とする。用途は訓練・習慣化・プロモーション。検診のメッセージ2例は編集上の仮想例であり、検証された介入例ではない。MoA/BCT個別の有効性や受診率向上は主張しない。Haptic AnatomyはBXPFの実装や実証済みの成果とは扱わず、博士研究として問いを接続。
+
+
+## 2026-10-31: 図版の簡素化
+03の図を1400×560へ縮小し、課題→エビデンスに基づくAI→個別メッセージの一例へ集約。用途は3語だけを残す。02をCV×Digital Health、03をDigital Health×HCIへ変更。肖像のメッセージは「情報に、手触りを。技術に、命の実感を。」へ更新。
+
+
+## 2026-10-31: 文字に頼らない研究イメージ
+03のフロー図を、人物・研究論文とモデル・スマートフォンの予約という三つの要素で表すAI生成の研究イメージへ変更。実際の被験者や製品画面ではない。公開研究が目指すエビデンスに基づく個別介入を編集的に表現。生成原図は illustrations/behavior-health-action.png、掲載画像は portfolio-assets/behavior-health-action.webp。生成方法は内蔵image_gen。自己紹介コピーは複数案の提案段階のため未変更。
+
+
+## 2026-10-31: プラットフォームの具体的アプローチへ再修正
+人物と書籍の編集イメージは不採用。業務課題の5W→AIのMoA推定→エビデンスを用いたBCT対応付け→施策候補→用途別アプリという公開手法を、説明用プラットフォーム画面として再構成。実際のUIの再現ではない。個別のMoA/BCT選択・メッセージは仮想例。生成候補に含まれた未検証の分類ラベルは除去。掲載画像はbehavior-platform.webp、生成指示はBEHAVIOR_PLATFORM_PROMPT.md。コピーは本人指定の「情報に、手触りを。技術に命の使命を。」へ変更。
+
+
+## 2026-10-31: 03を三つの要素へ圧縮
+前版の画面図から細かい5W入力欄、ヘッダー、用途タブ、施策候補欄を削除。業務課題・MoA/BCTのエビデンス対応・介入メッセージの三点を大きく配置し、サムネイルでの認識を優先。公開研究の説明用再構成という位置付けは継続。採用画像behavior-platform-simple.webp、生成指示BEHAVIOR_THREE_POINT_PROMPT.md。
+
+
+## 2026-10-31: 直前のプラットフォーム図へ復元
+三点版は単純化しすぎたため不採用。業務課題入力、MoA/BCT対応、施策候補、アプリ展開が見えるbehavior-platform.webpへ戻した。
+
+
+## 2026-10-31: 補足文の整理
+本人指定により冒頭の補足コピー、ヒーロー右図内の文字と図下ラベル、01のベン図下の専門性重複ラベル、博士研究の段階に関する補足文を削除。効果を実証済みとする文は追加していない。03の所属は本人指定の「2025年 富士通研究所 行動変容研究グループ」へ更新。
