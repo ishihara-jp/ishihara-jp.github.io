@@ -29,3 +29,11 @@ Profile affiliation is limited to the user-confirmed doctoral study. No employme
 - User-supplied portrait: authorized for this portfolio in the current request. Composed with responsive CSS cropping, grayscale and a paper-toned fade. Face and body are not regenerated. WebP copy is resized to 1800 by 1200, re-encoded with no EXIF metadata (47.6 KB); original stays outside the published repository. Original is retained locally outside the repository as well.
 - Design reference: https://www.pentagram.com/about/giorgia-lupi . Observed large typography, neutral portrait treatment and generous space; original composition and no borrowed imagery or code.
 - The three-circle SVG is a new explanatory diagram of HCI, Computer Vision and Digital Health, with Haptic Anatomy at their intersection. It is not an experimental result.
+
+
+## VisualData / independent public communication
+
+- User confirms this is a self-directed personal project after university and received broad attention, including YouTube views. No academic-paper status or unverified view counts are asserted.
+- Project: https://ishihara-jp.github.io/VisualData/ and public README https://github.com/ishihara-jp/VisualData . Verified 1981–2015 historical charts, geographic bubbles, market-share pies and company-relation graph; uses D3.js and other public libraries. Link the original project rather than copy financial datasets or third-party brand assets. Historical work, not a current financial data service.
+- Independent coverage: https://internet.watch.impress.co.jp/docs/yajiuma/740202.html (2016-01-22). Confirms public attention and video content; used as evidence of reach, with a short attributed excerpt.
+- YouTube: https://www.youtube.com/watch?v=RluruuTWmQA . Indexed title matches the project front-part video. Link only; no current count or account-ownership assertion.
