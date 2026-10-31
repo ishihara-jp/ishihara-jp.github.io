@@ -7,7 +7,7 @@
 | Visualization / 2006 | https://www.iplab.cs.tsukuba.ac.jp/paper/international/ishihara_kicss2006.pdf | University-hosted paper; concise description, linked rather than reproduced. |
 | 2019 award | https://global.fujitsu/ja-jp/technology/research/awards/2019 | Named joint recipients; no confidential context. |
 | 2020 award | https://global.fujitsu/ja-jp/technology/research/awards/2020 | Takagi award; public corporate record. |
-| Patent | https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=201603001820262279 | JST record verifies title, inventors including Ishihara and collaborators, Fujitsu applicant, patent 5994612. No patent count or current legal-status claim. |
+| Representative patent | https://koueki.jiii.or.jp/hyosho/chihatsu/R2/jusho_kanto/ | Official FY2020 Kanto Regional Invention Awards list: Invention Encouragement Award, medical-image tumor registration technology, patent 6344039; Ishihara, Matsuda, Sugimura, Endo and Baba jointly named. |
 | Open-source demo | https://github.com/ishihara-jp/VizNestJson | Public README links HyperTree demo; third-party libraries acknowledged. External demo is linked, not modified. |
 | Haptic Anatomy | User-supplied doctoral research introduction | User authorizes university research publication. Only page 5 component diagram extracted; no full PDF, embedded source metadata or internal company material committed. Diagram ownership should be included in final content review. |
 | Prototype video | https://www.instagram.com/reel/DJE5z21tULg/ | Public URL provided in doctoral introduction; external service may require login. |
@@ -37,3 +37,8 @@ Profile affiliation is limited to the user-confirmed doctoral study. No employme
 - Project: https://ishihara-jp.github.io/VisualData/ and public README https://github.com/ishihara-jp/VisualData . Verified 1981–2015 historical charts, geographic bubbles, market-share pies and company-relation graph; uses D3.js and other public libraries. Link the original project rather than copy financial datasets or third-party brand assets. Historical work, not a current financial data service.
 - Independent coverage: https://internet.watch.impress.co.jp/docs/yajiuma/740202.html (2016-01-22). Confirms public attention and video content; used as evidence of reach, with a short attributed excerpt.
 - YouTube: https://www.youtube.com/watch?v=RluruuTWmQA . Indexed title matches the project front-part video. Link only; no current count or account-ownership assertion.
+
+
+## Representative patent correction
+
+Replaced the video-editing patent with JP6344039B2 as requested. The Japan Institute of Invention and Innovation award list directly associates patent 6344039 with 医用画像検査向け腫瘍位置合わせ技術 and FY2020 関東地方発明表彰 発明奨励賞. Patent publication https://patents.google.com/patent/JP6344039B2/ja gives the formal title 画像表示装置、画像表示方法及びプログラム. Display the award name and formal patent title separately, link both sources, and make no current legal-status claim.
