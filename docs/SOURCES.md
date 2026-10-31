@@ -42,3 +42,12 @@ Profile affiliation is limited to the user-confirmed doctoral study. No employme
 ## Representative patent correction
 
 Replaced the video-editing patent with JP6344039B2 as requested. The Japan Institute of Invention and Innovation award list directly associates patent 6344039 with 医用画像検査向け腫瘍位置合わせ技術 and FY2020 関東地方発明表彰 発明奨励賞. Patent publication https://patents.google.com/patent/JP6344039B2/ja gives the formal title 画像表示装置、画像表示方法及びプログラム. Display the award name and formal patent title separately, link both sources, and make no current legal-status claim.
+
+
+## Precision Health and medical-image AI
+
+- User confirms leading Precision Health research and the development of pancreatic cancer AI and metastatic liver tumor image-diagnosis support AI. Leadership statements are based on the user's first-hand account, not inferred from authorship or corporate press releases.
+- https://info.archives.global.fujitsu/jp/news/2022/04/25-1.html : joint announcement dated 2022-04-25 with Southern TOHOKU General Hospital. Describes research started on April 1 into detecting suspected pancreatic cancer regions from non-contrast CT. We describe research and the early-detection objective, not a released product, demonstrated mortality benefit or current deployment status. No patient images or datasets reproduced.
+- https://www.youtube.com/watch?v=oBqJIqmb1Dw : user-supplied public Precision Health introduction. Text fetch unavailable; link labelled by user-provided context, no inferred transcript, exact title, views, speaker identity or quantitative claims.
+- https://ieeexplore.ieee.org/abstract/document/10611948/ : IEEE page unavailable to text reader; title and matching document link confirmed via the research group's public article https://blog.fltech.dev/entry/2024/09/13/WCCI2024-PrecisionHealth . Title: Lightweight Detection Architecture Adapted to Small Lesions Using Multiscale Sampling Method, IEEE CEC 2024. Do not label this a journal paper or Ishihara first-author paper.
+- https://link.springer.com/article/10.1007/s11604-025-01859-6 : full open-access follow-up reader-performance article inspected. Reference 14 verifies Karasudani A, Ishihara M, et al., IEEE CEC 2024, pages 1–8. Ishihara is also a coauthor of this Jpn J Radiol article (online 2025, issue 2026). It concerns hepatic lesion detection on EOB-enhanced hepatobiliary-phase MRI, not diagnosis of every form of primary liver cancer. A link is provided without copying clinical images or selectively promoting sensitivity statistics.
