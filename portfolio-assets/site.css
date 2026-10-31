@@ -272,3 +272,13 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 /* Behavioral research uses the same image-and-copy rhythm as other fields. */
 #behavior .behavior-example{grid-column:1;grid-row:1}#behavior .expertise-copy{grid-column:2;grid-row:1;max-width:none}
 @media(max-width:800px){#behavior .behavior-example,#behavior .expertise-copy{grid-column:auto;grid-row:auto}}
+
+/* Editorial refinement: one introduction, evidence-led research, quiet profile. */
+.hero{min-height:590px;padding-top:45px;padding-bottom:45px}
+.hero-art .venn-figure{max-width:520px;margin:auto}
+.question{padding-top:42px;padding-bottom:42px}
+.question h2{font-size:30px}.question p{margin-bottom:0}
+.featured{margin-top:55px;padding-top:45px;border-top:1px solid var(--line)}
+.editorial-about .about-body{display:block;max-width:920px;margin:auto;padding:45px 8%}
+.about-links{display:flex;flex-wrap:wrap;gap:8px 22px}.about-links .text-link{margin-right:0}
+@media(max-width:800px){.hero{min-height:0;padding-top:40px;padding-bottom:30px;gap:15px}.hero-art .venn-figure{max-width:340px}.question h2{font-size:26px}.question{padding-top:32px;padding-bottom:32px}.featured{margin-top:20px;padding-top:35px}.editorial-about .about-body{padding:30px 7%}}
