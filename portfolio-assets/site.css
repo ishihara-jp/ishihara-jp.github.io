@@ -297,6 +297,10 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .pub-meta{display:flex;gap:12px;align-items:center;margin-bottom:9px;color:var(--muted);font:10px/1.6 "Yu Gothic",sans-serif;letter-spacing:.04em}
 .pub-meta time{font-family:monospace;color:var(--accent);font-size:12px}
 .pub-meta span{border-left:1px solid var(--line);padding-left:12px}
+/* Institutional badges appear only where coauthor affiliations are verified. */
+.pub-meta{flex-wrap:wrap;row-gap:6px}
+.pub-meta .pub-org{border:1px solid rgba(65,99,79,.18);border-radius:3px;background:rgba(65,99,79,.07);color:var(--muted);font-size:10px;letter-spacing:0;line-height:1.55;padding:1px 7px;margin-left:0;white-space:nowrap}
+
 .publication-item>a{display:block;font-size:14px;line-height:1.85;color:var(--ink);font-weight:500;text-decoration:none;overflow-wrap:anywhere}
 .publication-item>a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--accent)}
 .publication-item>a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
