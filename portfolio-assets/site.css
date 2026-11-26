@@ -301,15 +301,9 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .publication-item>a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--accent)}
 .publication-item>a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .publication-item>p{color:var(--muted);font-size:11px;line-height:1.85;margin:5px 0 0}
-.publication-footnote{color:var(--muted);font-size:10px;line-height:1.9;margin:25px 0 0}
+.publication-footnote{color:var(--muted);opacity:.58;font-size:9px;line-height:1.8;margin:18px 0 0}
 .publication-external{margin:18px 0 0}
 @media(max-width:800px){.publications{margin-top:35px;padding:48px 0}.publications-intro h2{font-size:29px}.publication-columns{grid-template-columns:1fr;gap:38px;margin-top:30px}.publication-column h3{font-size:19px}.publication-item>a{font-size:13px}.publication-item{padding:15px 0 17px}}
-
-/* A restrained emphasis for the AMIA EHR disease-prediction paper. */
-.publication-item-featured{border-left:2px solid var(--accent);padding-left:16px;margin-left:-18px}
-.publication-item-featured>a{font-weight:600}
-.publication-item-featured>p:last-child{color:var(--ink);font-size:12px}
-@media(max-width:800px){.publication-item-featured{padding-left:12px;margin-left:-14px}}
 
 /* Discussion participation is distinct from first-author scholarly publications. */
 .publication-related{margin-top:30px;padding:20px 0 0;border-top:1px solid var(--line)}
@@ -319,28 +313,16 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .publication-related a:hover{color:var(--accent)}
 .publication-related small{display:block;color:var(--muted);font-size:10px;line-height:1.8;margin-top:5px}
 
-/* Book contribution is distinct from first-author articles and coauthored research. */
-.publication-book{margin-top:34px;padding:28px 32px;border-top:2px solid var(--ink);background:rgba(120,145,124,.07)}
-.publication-book h3{font-family:"Yu Mincho",serif;font-size:21px;font-weight:500;line-height:1.75;margin:7px 0 12px}
-.publication-book p{font-size:12px;line-height:1.85;color:var(--muted);margin:7px 0}
-.publication-book>a{display:inline-block;margin-top:12px;color:var(--accent);font-size:12px;text-underline-offset:4px}
-@media(max-width:800px){.publication-book{margin-top:28px;padding:22px 18px}.publication-book h3{font-size:18px}}
-
-/* Book jacket and copy: same editorial hierarchy as the publication entries. */
-.publication-book{display:grid;grid-template-columns:160px minmax(0,1fr);align-items:start;gap:30px}
-.publication-book-cover{margin:0;max-width:160px}
-.publication-book-cover a{display:block;border:1px solid var(--line);background:#fff;box-shadow:0 12px 30px rgba(32,62,52,.12)}
-.publication-book-cover img{display:block;width:100%;height:auto;min-height:220px;object-fit:contain}
-.publication-book-cover figcaption{font-size:10px;line-height:1.7;color:var(--muted);margin-top:8px}
+/* A compact cover-and-citation row for the book contribution. */
+.publication-book{display:grid;grid-template-columns:136px minmax(0,1fr);gap:24px;align-items:start;margin-top:34px;padding:26px 0 0;border-top:1px solid var(--line);background:transparent}
+.publication-book-cover{margin:0;max-width:136px}
+.publication-book-cover a{display:block;border:1px solid var(--line);background:#fff}
+.publication-book-cover img{display:block;width:100%;height:auto;object-fit:contain}
 .publication-book-details{min-width:0}
-.publication-book-details .pub-meta{margin-top:0}
-.publication-book-details h3{margin-top:5px}
+.publication-book-details .pub-meta{margin:0 0 8px}
+.publication-book-details h3{font-family:"Yu Mincho",serif;font-size:19px;font-weight:500;line-height:1.7;margin:0 0 10px}
+.publication-book-details p{color:var(--muted);font-size:11px;line-height:1.8;margin:0 0 10px}
+.publication-book-details>a{display:inline-block;color:var(--accent);font-size:11px;text-underline-offset:4px}
 .publication-book-details>a:focus-visible,.publication-book-cover a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-@media(max-width:800px){
-  .publication-book{grid-template-columns:102px minmax(0,1fr);gap:17px}
-  .publication-book-cover{max-width:102px}
-  .publication-book-cover img{min-height:145px}
-  .publication-book-details h3{font-size:16px}
-  .publication-book-details p{font-size:11px}
-}
-@media(max-width:380px){.publication-book{grid-template-columns:1fr}.publication-book-cover{max-width:120px}}
+@media(max-width:800px){.publication-book{grid-template-columns:95px minmax(0,1fr);gap:16px;margin-top:24px;padding-top:20px}.publication-book-cover{max-width:95px}.publication-book-details h3{font-size:16px}}
+@media(max-width:380px){.publication-book{grid-template-columns:1fr}.publication-book-cover{max-width:110px}}
