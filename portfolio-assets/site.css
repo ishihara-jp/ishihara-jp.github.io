@@ -282,3 +282,25 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .editorial-about .about-body{display:block;max-width:920px;margin:auto;padding:45px 8%}
 .about-links{display:flex;flex-wrap:wrap;gap:8px 22px}.about-links .text-link{margin-right:0}
 @media(max-width:800px){.hero{min-height:0;padding-top:40px;padding-bottom:30px;gap:15px}.hero-art .venn-figure{max-width:340px}.question h2{font-size:26px}.question{padding-top:32px;padding-bottom:32px}.featured{margin-top:20px;padding-top:35px}.editorial-about .about-body{padding:30px 7%}}
+
+/* Selected first-author and co-authored publications */
+.publications{padding:85px 0 70px;border-top:1px solid var(--line);margin-top:75px}
+.publications-intro{max-width:780px}
+.publications-intro h2{font-family:"Yu Mincho",serif;font-size:38px;font-weight:400;letter-spacing:.04em;margin:15px 0 20px;line-height:1.5}
+.publications-intro>p:not(.eyebrow){color:var(--muted);font-size:14px;line-height:2}
+.publication-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:7%;margin-top:38px}
+.publication-column{min-width:0;border-top:2px solid var(--ink);padding-top:24px}
+.publication-column h3{font-size:20px;font-weight:500;margin:0 0 28px;line-height:1.5}
+.publication-column h3 small{font:10px/1.5 monospace;letter-spacing:1px;color:var(--muted);margin-left:11px;white-space:nowrap}
+.publication-list{list-style:none;padding:0;margin:0}
+.publication-item{padding:20px 0 22px;border-bottom:1px solid var(--line)}
+.pub-meta{display:flex;gap:12px;align-items:center;margin-bottom:9px;color:var(--muted);font:10px/1.6 "Yu Gothic",sans-serif;letter-spacing:.04em}
+.pub-meta time{font-family:monospace;color:var(--accent);font-size:12px}
+.pub-meta span{border-left:1px solid var(--line);padding-left:12px}
+.publication-item>a{display:block;font-size:14px;line-height:1.85;color:var(--ink);font-weight:500;text-decoration:none;overflow-wrap:anywhere}
+.publication-item>a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--accent)}
+.publication-item>a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.publication-item>p{color:var(--muted);font-size:11px;line-height:1.85;margin:5px 0 0}
+.publication-footnote{color:var(--muted);font-size:10px;line-height:1.9;margin:25px 0 0}
+.publication-external{margin:18px 0 0}
+@media(max-width:800px){.publications{margin-top:35px;padding:48px 0}.publications-intro h2{font-size:29px}.publication-columns{grid-template-columns:1fr;gap:38px;margin-top:30px}.publication-column h3{font-size:19px}.publication-item>a{font-size:13px}.publication-item{padding:15px 0 17px}}
