@@ -203,7 +203,7 @@ footer{flex-wrap:wrap;padding:25px 7%}
 .expertise-story .text-link{font-size:11px}
 
 details{margin-top:24px;border-top:1px solid var(--line);font-size:12px}
-summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;list-style:none;padding:11px 12px;font-size:13px;font-weight:600;line-height:1.6;color:var(--ink);background:#e6eadf}
+summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;list-style:none;padding:11px 12px;font-size:13px;font-weight:600;line-height:1.6;color:var(--ink);background:#e6eadf;border-left:3px solid var(--accent)}
 summary:hover{color:var(--accent)}
 summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .evidence-list{display:grid;gap:14px;padding:8px 0 20px}
@@ -367,8 +367,8 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .pub-meta span{padding-left:10px}
 .publication-more{margin:0;border-top:1px solid var(--line)}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"＋ 開く";font:11px/1.4 "Yu Gothic",sans-serif;color:var(--accent);white-space:nowrap;flex-shrink:0}
-details[open]>summary::after{content:"− 閉じる"}
+summary::after{content:"＋";font:18px/1 "Yu Gothic",sans-serif;color:var(--accent);flex-shrink:0}
+details[open]>summary::after{content:"−"}
 .publication-more .publication-list-more{padding-top:0}
 .publication-more .publication-list-more .publication-item:first-child{border-top:1px solid var(--line)}
 .publication-related{margin-top:10px;padding:0;border-top:1px solid var(--line)}
