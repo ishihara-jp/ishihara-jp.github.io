@@ -391,3 +391,24 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
   .publication-item>a{font-size:13px}
   .portrait-panel{min-height:430px}
 }
+
+/* Research stories: heading first, image second, explanation third. */
+.expertise-story{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 44px}
+.expertise-story>.expertise-heading{grid-column:1/-1;grid-row:1;min-width:0}
+.expertise-story>.expertise-heading .eyebrow{margin:0 0 8px}
+.expertise-story>.expertise-heading h3{font-size:28px;line-height:1.55;margin:0 0 4px}
+.expertise-story>.specialty-plate{grid-column:1;grid-row:2;align-self:start}
+.expertise-story>.expertise-copy{grid-column:2;grid-row:2;align-self:start}
+.expertise-story:nth-child(2)>.specialty-plate{grid-column:2;grid-row:2}
+.expertise-story:nth-child(2)>.expertise-copy{grid-column:1;grid-row:2}
+#behavior>.behavior-example{grid-column:1;grid-row:2}
+#behavior>.expertise-copy{grid-column:2;grid-row:2;max-width:none}
+.expertise-story .specialty-plate{margin:0}
+.expertise-story .expertise-copy .expertise-teaser{margin-top:0}
+@media(max-width:800px){
+  .expertise-story{grid-template-columns:minmax(0,1fr);gap:15px}
+  .expertise-story>.expertise-heading{grid-column:1;grid-row:1}
+  .expertise-story>.expertise-heading h3{font-size:24px;line-height:1.55;margin-bottom:0}
+  .expertise-story>.specialty-plate,.expertise-story:nth-child(2)>.specialty-plate,#behavior>.behavior-example{grid-column:1;grid-row:2}
+  .expertise-story>.expertise-copy,.expertise-story:nth-child(2)>.expertise-copy,#behavior>.expertise-copy{grid-column:1;grid-row:3}
+}
