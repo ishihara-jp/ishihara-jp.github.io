@@ -338,3 +338,56 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .haptic-book{grid-template-columns:120px minmax(0,1fr);gap:24px}
 @media(max-width:800px){.haptic-book{grid-template-columns:95px minmax(0,1fr);gap:16px;margin:12px 0 40px}.haptic-book .publication-book-cover{max-width:95px}.haptic-book .publication-book-details h3{font-size:16px}}
 @media(max-width:380px){.haptic-book{grid-template-columns:1fr}.haptic-book .publication-book-cover{max-width:110px}}
+
+/* Progressive disclosure: scan-first editorial pass */
+.expertise-story{gap:44px;padding:42px 0}
+.expertise-story .expertise-copy>.eyebrow{margin-bottom:12px}
+.expertise-story h3{margin-bottom:14px;line-height:1.55}
+.expertise-story .expertise-teaser{max-width:48ch;font-size:14px;line-height:1.85;margin:0 0 8px}
+.expertise-story .expertise-more{margin-top:18px}
+.expertise-detail{padding:2px 0 7px;color:var(--muted)}
+.expertise-story .expertise-detail p{font-size:12px;line-height:1.9;margin:9px 0}
+.expertise-more .evidence-list{gap:10px}
+.expertise-more .evidence-list a{font-size:11px}
+.expertise-story .expertise-more summary{color:var(--muted)}
+.expertise-story .expertise-more[open] summary{color:var(--ink)}
+.haptic-book{max-width:740px;margin-top:8px;margin-bottom:46px;padding-top:20px}
+.haptic-book .publication-book-details h3{font-size:17px}
+.publications{margin-top:50px;padding:60px 0}
+.publications-intro h2{margin:11px 0 12px}
+.publications-intro>p:not(.eyebrow){font-size:12px;line-height:1.8}
+.publication-columns{margin-top:28px;gap:6%}
+.publication-column{padding-top:17px}
+.publication-column h3{font-size:19px;margin-bottom:15px}
+.publication-column h3 small{font:11px/1.6 "Yu Gothic",sans-serif;letter-spacing:0;margin-left:9px}
+.publication-item{padding:14px 0 16px}
+.publication-item>a{font-size:13px;line-height:1.7}
+.publication-item>p{font-size:11px;margin-top:4px}
+.pub-meta{margin-bottom:6px;gap:10px}
+.pub-meta span{padding-left:10px}
+.publication-more{margin:0;border-top:1px solid var(--line)}
+.publication-more summary,.publication-related summary{list-style:none;display:flex;align-items:center;gap:9px;color:var(--ink);font-size:12px;font-weight:500;cursor:pointer;padding:16px 0}
+.publication-more summary::-webkit-details-marker,.publication-related summary::-webkit-details-marker{display:none}
+.publication-more summary::before,.publication-related summary::before{content:"＋";font:15px/1 monospace;color:var(--accent)}
+.publication-more[open] summary::before,.publication-related[open] summary::before{content:"−"}
+.publication-more .publication-list-more{padding-top:0}
+.publication-more .publication-list-more .publication-item:first-child{border-top:1px solid var(--line)}
+.publication-related{margin-top:10px;padding:0;border-top:1px solid var(--line)}
+.publication-related a{display:block;padding-top:3px}
+.publication-related small{margin:4px 0 14px}
+.publication-footnote{margin-top:12px}
+.publication-external{margin-top:11px}
+@media(max-width:800px){
+  .expertise-story{gap:19px;padding:32px 0}
+  .expertise-story h3{font-size:24px;margin-bottom:11px}
+  .expertise-story .expertise-teaser{font-size:13px}
+  .expertise-story .expertise-more{margin-top:13px}
+  .haptic-book{margin:8px 0 37px}
+  .haptic-book .publication-book-details h3{font-size:16px}
+  .publications{margin-top:30px;padding:40px 0}
+  .publication-columns{gap:34px;margin-top:22px}
+  .publication-column h3{font-size:18px;margin-bottom:12px}
+  .publication-item{padding:13px 0 14px}
+  .publication-item>a{font-size:13px}
+  .portrait-panel{min-height:430px}
+}
