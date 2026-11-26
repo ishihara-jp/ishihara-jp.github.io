@@ -297,6 +297,10 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .pub-meta{display:flex;gap:12px;align-items:center;margin-bottom:9px;color:var(--muted);font:10px/1.6 "Yu Gothic",sans-serif;letter-spacing:.04em}
 .pub-meta time{font-family:monospace;color:var(--accent);font-size:12px}
 .pub-meta span{border-left:1px solid var(--line);padding-left:12px}
+/* Institutional badges appear only where coauthor affiliations are verified. */
+.pub-meta{flex-wrap:wrap;row-gap:6px}
+.pub-meta .pub-org{border:1px solid rgba(65,99,79,.18);border-radius:3px;background:rgba(65,99,79,.07);color:var(--muted);font-size:10px;letter-spacing:0;line-height:1.55;padding:1px 7px;margin-left:0;white-space:nowrap}
+
 .publication-item>a{display:block;font-size:14px;line-height:1.85;color:var(--ink);font-weight:500;text-decoration:none;overflow-wrap:anywhere}
 .publication-item>a:hover{text-decoration:underline;text-underline-offset:4px;color:var(--accent)}
 .publication-item>a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
@@ -326,3 +330,11 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .publication-book-details>a:focus-visible,.publication-book-cover a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media(max-width:800px){.publication-book{grid-template-columns:95px minmax(0,1fr);gap:16px;margin-top:24px;padding-top:20px}.publication-book-cover{max-width:95px}.publication-book-details h3{font-size:16px}}
 @media(max-width:380px){.publication-book{grid-template-columns:1fr}.publication-book-cover{max-width:110px}}
+
+/* Haptic Anatomy book column (not repeated in publication list). */
+.haptic-book{margin-top:20px;margin-bottom:60px;padding:22px 0 0;max-width:820px;border-top:1px solid var(--line)}
+.haptic-book .publication-book-details h3{font-size:18px;line-height:1.7}
+.haptic-book .publication-book-cover{max-width:120px}
+.haptic-book{grid-template-columns:120px minmax(0,1fr);gap:24px}
+@media(max-width:800px){.haptic-book{grid-template-columns:95px minmax(0,1fr);gap:16px;margin:12px 0 40px}.haptic-book .publication-book-cover{max-width:95px}.haptic-book .publication-book-details h3{font-size:16px}}
+@media(max-width:380px){.haptic-book{grid-template-columns:1fr}.haptic-book .publication-book-cover{max-width:110px}}
