@@ -318,3 +318,10 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .publication-related a{display:block;color:var(--ink);font-size:13px;line-height:1.8;overflow-wrap:anywhere}
 .publication-related a:hover{color:var(--accent)}
 .publication-related small{display:block;color:var(--muted);font-size:10px;line-height:1.8;margin-top:5px}
+
+/* Book contribution is distinct from first-author articles and coauthored research. */
+.publication-book{margin-top:34px;padding:28px 32px;border-top:2px solid var(--ink);background:rgba(120,145,124,.07)}
+.publication-book h3{font-family:"Yu Mincho",serif;font-size:21px;font-weight:500;line-height:1.75;margin:7px 0 12px}
+.publication-book p{font-size:12px;line-height:1.85;color:var(--muted);margin:7px 0}
+.publication-book>a{display:inline-block;margin-top:12px;color:var(--accent);font-size:12px;text-underline-offset:4px}
+@media(max-width:800px){.publication-book{margin-top:28px;padding:22px 18px}.publication-book h3{font-size:18px}}
