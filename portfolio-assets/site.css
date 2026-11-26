@@ -325,3 +325,22 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .publication-book p{font-size:12px;line-height:1.85;color:var(--muted);margin:7px 0}
 .publication-book>a{display:inline-block;margin-top:12px;color:var(--accent);font-size:12px;text-underline-offset:4px}
 @media(max-width:800px){.publication-book{margin-top:28px;padding:22px 18px}.publication-book h3{font-size:18px}}
+
+/* Book jacket and copy: same editorial hierarchy as the publication entries. */
+.publication-book{display:grid;grid-template-columns:160px minmax(0,1fr);align-items:start;gap:30px}
+.publication-book-cover{margin:0;max-width:160px}
+.publication-book-cover a{display:block;border:1px solid var(--line);background:#fff;box-shadow:0 12px 30px rgba(32,62,52,.12)}
+.publication-book-cover img{display:block;width:100%;height:auto;min-height:220px;object-fit:contain}
+.publication-book-cover figcaption{font-size:10px;line-height:1.7;color:var(--muted);margin-top:8px}
+.publication-book-details{min-width:0}
+.publication-book-details .pub-meta{margin-top:0}
+.publication-book-details h3{margin-top:5px}
+.publication-book-details>a:focus-visible,.publication-book-cover a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:800px){
+  .publication-book{grid-template-columns:102px minmax(0,1fr);gap:17px}
+  .publication-book-cover{max-width:102px}
+  .publication-book-cover img{min-height:145px}
+  .publication-book-details h3{font-size:16px}
+  .publication-book-details p{font-size:11px}
+}
+@media(max-width:380px){.publication-book{grid-template-columns:1fr}.publication-book-cover{max-width:120px}}
